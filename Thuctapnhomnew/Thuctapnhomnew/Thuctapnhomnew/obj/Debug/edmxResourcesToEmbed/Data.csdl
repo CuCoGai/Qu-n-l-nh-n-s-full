@@ -172,6 +172,8 @@
     <NavigationProperty Name="khenthuong" Relationship="Self.FK__thongtink__khent__300424B4" FromRole="thongtinkhacvenhanvien" ToRole="khenthuong" />
     <NavigationProperty Name="kyluat" Relationship="Self.FK__thongtink__kylua__30F848ED" FromRole="thongtinkhacvenhanvien" ToRole="kyluat" />
     <NavigationProperty Name="nhanvien" Relationship="Self.FK__thongtink__nhanv__31EC6D26" FromRole="thongtinkhacvenhanvien" ToRole="nhanvien" />
+    <Property Name="soLD" Type="Int32" />
+    <Property Name="soBHXH" Type="Int32" />
   </EntityType>
   <Association Name="FK__baohiem__nhanvie__267ABA7A">
     <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="0..1" />

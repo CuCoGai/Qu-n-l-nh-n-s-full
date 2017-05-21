@@ -70,6 +70,7 @@ namespace Thuctapnhomnew
 
         private void from2_Load(object sender, EventArgs e)
         {
+
             load();
         }
         public void load()
@@ -90,10 +91,14 @@ namespace Thuctapnhomnew
 
             //Load DataGridView
             dgv_dsnv.DataSource = ketnoi.gettable("select ma as N'Mã',ten as N'Họ tên',ngaysinh as N'Ngày sinh', case gioitinh when 1 then 'Nam' when 0 then N'Nữ' end as N'Gioi tinh',soCMT as N'CMTND',anh as N'Ảnh nhân viên',dienthoai as N'SĐT',email,quoctich,tongiao,dantoc,ngaycap,noicap,case tinhtranghonnhan when 1 then N'Đã kết hôn' when 0 then N'Chưa kết hôn 'end as N'Trình trạng hôn nhân',noisinh,quequan,hokhauthuongtru,noiohiennay   from nhanvien");
-
+           
             // btn_chapnhan.Enabled = false;
             //  btn_huy.Enabled = false;
             ketnoi.dongketnoi();
+            QLNhanSuEntities db = new QLNhanSuEntities();
+            var list = (from s in db.luongcobans select s.ma ).ToList();
+            dgv_luong.DataSource = list;
+
         }
 
         private void dgv_dsnv_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -154,6 +159,9 @@ namespace Thuctapnhomnew
             txt_tenhd.Text = tenhd.FirstOrDefault();
             txt_luongcb.Text = luongcoban.FirstOrDefault().ToString();
             txt_ngaykt.Text = ngaykt.FirstOrDefault().ToString();
+            var thongtingiadinh = from s in nv.thongtinkhacvenhanviens where s.nhanvienma == newnv.ma select s.giadinh;
+            txt_giadinh.Text = thongtingiadinh.FirstOrDefault();
+            var solaodong = from s in nv.thongtinkhacvenhanviens where s.nhanvienma == newnv.ma select s ;
 
         }
 
@@ -213,13 +221,14 @@ namespace Thuctapnhomnew
         {
             string id = dgv_luong.CurrentRow.Cells[0].Value.ToString();
             QLNhanSuEntities db = new QLNhanSuEntities();
-            luongcoban sa = db.luongcobans.Single(s => s.ma == id);
-            //  dgv_luong.Rows.Clear();
+            luongcoban sa = db.luongcobans.Single(s => s.ma ==id);
+          
             dgv_luong.Rows.Clear();
-            var list = from s in db.luongcobans
-                       where s.ma == s.ma//Chọn toàn bộ bảng
-                       select s;
-            dgv_luong.DataSource = list;
+            //var list = from s in db.luongcobans
+            //           where s.ma == s.ma//Chọn toàn bộ bảng
+            //           select s;
+        
+
         }
 
         private void dgv_phucap_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -231,6 +240,9 @@ namespace Thuctapnhomnew
 
         }
 
-      
+        private void btn_brown_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

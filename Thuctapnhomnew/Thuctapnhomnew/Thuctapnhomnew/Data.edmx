@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="QLNhanSuModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="QLNhanSuModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="baohiem">
           <Key>
             <PropertyRef Name="ma" />
@@ -151,6 +151,8 @@
           <Property Name="taikhoannganhang" Type="varchar" MaxLength="20" />
           <Property Name="manganhang" Type="varchar" MaxLength="10" />
           <Property Name="nhanvienma" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="soLD" Type="int" />
+          <Property Name="soBHXH" Type="int" />
         </EntityType>
         <Association Name="FK__baohiem__nhanvie__267ABA7A">
           <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="0..1" />
@@ -407,8 +409,7 @@
             <End Role="thongtinkhacvenhanvien" EntitySet="thongtinkhacvenhanvien" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QLNhanSuModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -584,6 +585,8 @@
           <NavigationProperty Name="khenthuong" Relationship="Self.FK__thongtink__khent__300424B4" FromRole="thongtinkhacvenhanvien" ToRole="khenthuong" />
           <NavigationProperty Name="kyluat" Relationship="Self.FK__thongtink__kylua__30F848ED" FromRole="thongtinkhacvenhanvien" ToRole="kyluat" />
           <NavigationProperty Name="nhanvien" Relationship="Self.FK__thongtink__nhanv__31EC6D26" FromRole="thongtinkhacvenhanvien" ToRole="nhanvien" />
+          <Property Name="soLD" Type="Int32" />
+          <Property Name="soBHXH" Type="Int32" />
         </EntityType>
         <Association Name="FK__baohiem__nhanvie__267ABA7A">
           <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="0..1" />
@@ -1008,6 +1011,8 @@
           <EntitySetMapping Name="thongtinkhacvenhanviens">
             <EntityTypeMapping TypeName="QLNhanSuModel1.thongtinkhacvenhanvien">
               <MappingFragment StoreEntitySet="thongtinkhacvenhanvien">
+                <ScalarProperty Name="soBHXH" ColumnName="soBHXH" />
+                <ScalarProperty Name="soLD" ColumnName="soLD" />
                 <ScalarProperty Name="giadinh" ColumnName="giadinh" />
                 <ScalarProperty Name="khenthuongma" ColumnName="khenthuongma" />
                 <ScalarProperty Name="kyluatma" ColumnName="kyluatma" />

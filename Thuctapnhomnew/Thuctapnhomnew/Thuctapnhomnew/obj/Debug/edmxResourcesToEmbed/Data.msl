@@ -153,6 +153,8 @@
     <EntitySetMapping Name="thongtinkhacvenhanviens">
       <EntityTypeMapping TypeName="QLNhanSuModel1.thongtinkhacvenhanvien">
         <MappingFragment StoreEntitySet="thongtinkhacvenhanvien">
+          <ScalarProperty Name="soBHXH" ColumnName="soBHXH" />
+          <ScalarProperty Name="soLD" ColumnName="soLD" />
           <ScalarProperty Name="giadinh" ColumnName="giadinh" />
           <ScalarProperty Name="khenthuongma" ColumnName="khenthuongma" />
           <ScalarProperty Name="kyluatma" ColumnName="kyluatma" />

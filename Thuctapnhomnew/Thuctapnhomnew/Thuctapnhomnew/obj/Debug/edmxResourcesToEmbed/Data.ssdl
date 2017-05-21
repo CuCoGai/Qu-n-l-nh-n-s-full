@@ -146,6 +146,8 @@
     <Property Name="taikhoannganhang" Type="varchar" MaxLength="20" />
     <Property Name="manganhang" Type="varchar" MaxLength="10" />
     <Property Name="nhanvienma" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="soLD" Type="int" />
+    <Property Name="soBHXH" Type="int" />
   </EntityType>
   <Association Name="FK__baohiem__nhanvie__267ABA7A">
     <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="0..1" />

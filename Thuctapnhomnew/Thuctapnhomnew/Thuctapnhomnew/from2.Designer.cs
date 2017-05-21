@@ -117,8 +117,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.lbl_bhxh = new System.Windows.Forms.Label();
             this.lbl_sold = new System.Windows.Forms.Label();
-            this.txt_phongban = new System.Windows.Forms.TextBox();
-            this.lbl_phongban = new System.Windows.Forms.Label();
+            this.txt_giadinh = new System.Windows.Forms.TextBox();
+            this.lbl_giadinh = new System.Windows.Forms.Label();
             this.tbc_QLNS = new System.Windows.Forms.TabControl();
             this.tp_Quanlitienluong.SuspendLayout();
             this.tbc_qltienluong.SuspendLayout();
@@ -699,6 +699,7 @@
             this.btn_brown.TabIndex = 28;
             this.btn_brown.Text = "Brown";
             this.btn_brown.UseVisualStyleBackColor = true;
+            this.btn_brown.Click += new System.EventHandler(this.btn_brown_Click);
             // 
             // txt_sdt
             // 
@@ -908,8 +909,8 @@
             this.tp_ttkhac.Controls.Add(this.label11);
             this.tp_ttkhac.Controls.Add(this.lbl_bhxh);
             this.tp_ttkhac.Controls.Add(this.lbl_sold);
-            this.tp_ttkhac.Controls.Add(this.txt_phongban);
-            this.tp_ttkhac.Controls.Add(this.lbl_phongban);
+            this.tp_ttkhac.Controls.Add(this.txt_giadinh);
+            this.tp_ttkhac.Controls.Add(this.lbl_giadinh);
             this.tp_ttkhac.Location = new System.Drawing.Point(4, 22);
             this.tp_ttkhac.Name = "tp_ttkhac";
             this.tp_ttkhac.Padding = new System.Windows.Forms.Padding(3);
@@ -982,21 +983,21 @@
             this.lbl_sold.TabIndex = 2;
             this.lbl_sold.Text = "Số LĐ";
             // 
-            // txt_phongban
+            // txt_giadinh
             // 
-            this.txt_phongban.Location = new System.Drawing.Point(98, 17);
-            this.txt_phongban.Name = "txt_phongban";
-            this.txt_phongban.Size = new System.Drawing.Size(100, 20);
-            this.txt_phongban.TabIndex = 1;
+            this.txt_giadinh.Location = new System.Drawing.Point(98, 17);
+            this.txt_giadinh.Name = "txt_giadinh";
+            this.txt_giadinh.Size = new System.Drawing.Size(100, 20);
+            this.txt_giadinh.TabIndex = 1;
             // 
-            // lbl_phongban
+            // lbl_giadinh
             // 
-            this.lbl_phongban.AutoSize = true;
-            this.lbl_phongban.Location = new System.Drawing.Point(19, 20);
-            this.lbl_phongban.Name = "lbl_phongban";
-            this.lbl_phongban.Size = new System.Drawing.Size(48, 13);
-            this.lbl_phongban.TabIndex = 0;
-            this.lbl_phongban.Text = "Gia Đình";
+            this.lbl_giadinh.AutoSize = true;
+            this.lbl_giadinh.Location = new System.Drawing.Point(19, 20);
+            this.lbl_giadinh.Name = "lbl_giadinh";
+            this.lbl_giadinh.Size = new System.Drawing.Size(48, 13);
+            this.lbl_giadinh.TabIndex = 0;
+            this.lbl_giadinh.Text = "Gia Đình";
             // 
             // tbc_QLNS
             // 
@@ -1136,8 +1137,8 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label lbl_bhxh;
         private System.Windows.Forms.Label lbl_sold;
-        private System.Windows.Forms.TextBox txt_phongban;
-        private System.Windows.Forms.Label lbl_phongban;
+        private System.Windows.Forms.TextBox txt_giadinh;
+        private System.Windows.Forms.Label lbl_giadinh;
         private System.Windows.Forms.TabControl tbc_QLNS;
         private System.Windows.Forms.TabControl tbc_qltienluong;
         private System.Windows.Forms.TabPage tp_luong;
