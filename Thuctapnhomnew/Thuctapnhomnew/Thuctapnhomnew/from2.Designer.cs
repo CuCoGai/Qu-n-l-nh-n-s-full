@@ -286,6 +286,7 @@
             this.btn_thoat.TabIndex = 6;
             this.btn_thoat.Text = "Thoát";
             this.btn_thoat.UseVisualStyleBackColor = false;
+            this.btn_thoat.Click += new System.EventHandler(this.btn_thoat_Click);
             // 
             // btn_them
             // 
@@ -985,7 +986,7 @@
             // 
             // txt_giadinh
             // 
-            this.txt_giadinh.Location = new System.Drawing.Point(98, 17);
+            this.txt_giadinh.Location = new System.Drawing.Point(98, 19);
             this.txt_giadinh.Name = "txt_giadinh";
             this.txt_giadinh.Size = new System.Drawing.Size(100, 20);
             this.txt_giadinh.TabIndex = 1;

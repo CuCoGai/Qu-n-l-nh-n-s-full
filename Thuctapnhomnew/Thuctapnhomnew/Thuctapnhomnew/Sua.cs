@@ -14,18 +14,18 @@ using System.IO;
 
 namespace Thuctapnhomnew
 {
-   
+
 
     public partial class Sua : Form
     {
-       private string id;
+        private string id;
         private string path;
-
+        QLNhanSuEntities nv = new QLNhanSuEntities();
         public Sua(string id)
         {
             InitializeComponent();
 
-            QLNhanSuEntities nv = new QLNhanSuEntities();
+
             nhanvien newnv = nv.nhanviens.Single(s => s.ma == id);
             string path = newnv.anh.ToString();
             if (!string.IsNullOrWhiteSpace(path))
@@ -36,7 +36,7 @@ namespace Thuctapnhomnew
             }
             else
                 ptb_anh.Image = null;
-           
+
             txt_manv.Text = newnv.ma;
             txt_hoten.Text = newnv.ten;
             dtk_ngaysinh.Text = newnv.ngaysinh.ToString();
@@ -129,8 +129,8 @@ namespace Thuctapnhomnew
 
 
 
-        
-    }
+
+        }
 
         private void lbl_SDT_Click(object sender, EventArgs e)
         {
@@ -155,63 +155,68 @@ namespace Thuctapnhomnew
         }
         private void btn_sua_Click(object sender, EventArgs e)
         {
-            string str = @"Data Source=DESKTOP-MON8K1N\SQLEXPRESS;Initial Catalog=QLNhanSu;Integrated Security=True";
-            SqlConnection con = new SqlConnection(str);
-            con.Open();
-            string strcom = "update nhanvien set ma=@ma,ten=@ten,ngaysinh=@ngaysinh,gioitinh=@gioitinh,soCMT=@soCMT,anh=@anh,dienthoai=@dienthoai,email=@email,quoctich=@quoctich,tongiao=@tongiao,dantoc=@dantoc,ngaycap=@ngaycap,noicap=@noicap,tinhtranghonnhan=@tinhtranghonnhan,noisinh=@noisinh,quequan=@quequan,hokhauthuongtru=@hokhauthuongtru,noiohiennay=@noiohiennay where ma='" + txt_manv.Text+ "'";
 
-            SqlCommand cmd = new SqlCommand(strcom, con);
+            var n = nv.nhanviens.FirstOrDefault(x => x.ma == txt_manv.Text);
 
-            cmd.Parameters.AddWithValue("@ma", txt_manv.Text);
-            cmd.Parameters.AddWithValue("@ten", txt_hoten.Text);
-            cmd.Parameters.AddWithValue("@ngaysinh", DateTime.Parse(dtk_ngaysinh.Text));
+            n.ma = txt_manv.Text;
+            n.ten = txt_hoten.Text;
+
             Boolean gioiTinh = false;
             if (cmb_gioitinh.Text == "Nam")
             {
                 gioiTinh = true;
             }
+            n.gioitinh = gioiTinh;
 
+            n.ngaysinh = DateTime.Parse(dtk_ngaysinh.Text);
+            n.soCMT = txt_cmtnd.Text;
 
-            cmd.Parameters.AddWithValue("@gioitinh", gioiTinh);
-            cmd.Parameters.AddWithValue("@soCMT", txt_cmtnd.Text);
-            MemoryStream str1 = new MemoryStream();
-            ptb_anh.Image.Save(str1, System.Drawing.Imaging.ImageFormat.Jpeg);
+            try
+            {
+                MemoryStream str1 = new MemoryStream();
+                ptb_anh.Image.Save(str1, System.Drawing.Imaging.ImageFormat.Jpeg);
 
-            byte[] pic = str1.ToArray();
-            cmd.Parameters.AddWithValue("@anh", pic);
+                byte[] pic = str1.ToArray();
+                n.anh = pic;
+            }
+            catch
+            {
+                n.anh = null;
 
-            cmd.Parameters.AddWithValue("@dienthoai", txt_sdt.Text);
-            cmd.Parameters.AddWithValue("@email", txt_email.Text);
+            }
+            n.dienthoai = txt_sdt.Text;
+            n.email = txt_email.Text;
+            n.quoctich = txt_quoctich.Text;
+            n.tongiao = txt_tongiao.Text;
+            n.trinhdongoaingu = txt_ngoaingu.Text;
+            n.dantoc = txt_dantoc.Text;
+            n.ngaycap = DateTime.Parse(dtp_ngaycap.Text);
+            n.noicap = txt_noicap.Text;
 
-            cmd.Parameters.AddWithValue("@quoctich", txt_quoctich.Text);
-            cmd.Parameters.AddWithValue("@tongiao", txt_tongiao.Text);
-
-            cmd.Parameters.AddWithValue("@dantoc", txt_dantoc.Text);
-            cmd.Parameters.AddWithValue("@ngaycap", DateTime.Parse(dtp_ngaycap.Text));
-
-            cmd.Parameters.AddWithValue("@noicap", txt_noicap.Text);
-
-            Boolean tinhtranghn = false;
+            Boolean tinhtrang = false;
             if (cmb_tinhtranghonnhan.Text == "Đã kết hôn")
             {
-                tinhtranghn = true;
+                tinhtrang = true;
             }
-            cmd.Parameters.AddWithValue("@tinhtranghonnhan", tinhtranghn);
+            n.tinhtranghonnhan = tinhtrang;
+            n.noisinh = txt_noisinh.Text;
+            n.quequan = txt_quequan.Text;
+            n.noiohiennay = txt_tamtru.Text;
+            n.hokhauthuongtru = txt_thuongtru.Text;
+            n.phongbanma = txt_maphongban.Text;
+            n.chucvuma = txt_chucvu.Text;
+             nv.SaveChanges();
 
-            cmd.Parameters.AddWithValue("@noisinh", txt_noisinh.Text);
-
-            cmd.Parameters.AddWithValue("@quequan", txt_quequan.Text);
-            cmd.Parameters.AddWithValue("@hokhauthuongtru", txt_thuongtru.Text);
-
-            cmd.Parameters.AddWithValue("@noiohiennay", txt_tamtru.Text);
-
-
-            cmd.ExecuteNonQuery();
-            con.Close();
             from2 fr = new from2();
             fr.Show(this);
+            Hide();
             fr.load();
         }
+
+
+
+
+    
 
         private void Sua_Load_1(object sender, EventArgs e)
         {

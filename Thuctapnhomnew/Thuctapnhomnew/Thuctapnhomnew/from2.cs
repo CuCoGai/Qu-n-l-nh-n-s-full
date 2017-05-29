@@ -244,5 +244,12 @@ namespace Thuctapnhomnew
         {
 
         }
+
+        private void btn_thoat_Click(object sender, EventArgs e)
+        {
+            frm_trangchu fr = new frm_trangchu();
+            fr.Show();
+            Hide();
+        }
     }
 }

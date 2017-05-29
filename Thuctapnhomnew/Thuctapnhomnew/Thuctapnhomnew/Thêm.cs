@@ -26,14 +26,11 @@ namespace Thuctapnhomnew
         }
         public void load()
         {
-            // ketnoi.openketnoi();
-            //load comboBox
+           
             cmb_gioitinh.Items.Clear();
             cmb_gioitinh.Items.Add("Nam");
             cmb_gioitinh.Items.Add("Nữ");
-            //string chuoi = ketnoi.getString("NV0003");
-            //MessageBox.Show("th " + chuoi);
-            //  cmb_gioitinh.SelectedValue = "Nam";
+           
 
 
             //
@@ -45,69 +42,58 @@ namespace Thuctapnhomnew
         }
         private void btn_OK_Click(object sender, EventArgs e)
         {
-            if ((txt_manv.Text == "") || (txt_hoten.Text == "") || (dtk_ngaysinh.Text == "") || (cmb_gioitinh.Text == "") || (txt_cmtnd.Text == ""))
-            //if ((txt_ID.Text == "") || (txt_ten.Text == "") )
-            {
-                MessageBox.Show(" Chưa có dữ liệu thêm vào", "Thông báo");
-                return;
-            }
-            string str = @"Data Source=DESKTOP-MON8K1N\SQLEXPRESS;Initial Catalog=QLNhanSu;Integrated Security=True";
-            SqlConnection con = new SqlConnection(str);
-            con.Open();
-            string strcom = "insert into nhanvien(ma,ten,ngaysinh,gioitinh,soCMT,anh,dienthoai,email,quoctich,tongiao,dantoc,ngaycap,noicap,noisinh,quequan,hokhauthuongtru,noiohiennay ) values (@ma,@ten,@ngaysinh,@gioitinh,@soCMT,@anh,@dienthoai,@email,@quoctich,@tongiao,@dantoc,@ngaycap,@noicap,@noisinh,@quequan,@hokhauthuongtru,@noiohiennay )";
-            SqlCommand cmd = new SqlCommand(strcom, con);
-            cmd.Parameters.AddWithValue("@ma", txt_manv.Text);
-            cmd.Parameters.AddWithValue("@ten", txt_hoten.Text);
-            cmd.Parameters.AddWithValue("@ngaysinh", DateTime.Parse(dtk_ngaysinh.Text));
+            QLNhanSuEntities db = new QLNhanSuEntities();
+            nhanvien n = new nhanvien();
+            n.ma = txt_manv.Text;
+            n.ten = txt_hoten.Text;
+
             Boolean gioiTinh = false;
             if (cmb_gioitinh.Text == "Nam")
             {
                 gioiTinh = true;
             }
+            n.gioitinh = gioiTinh;
 
-            cmd.Parameters.AddWithValue("@gioitinh", gioiTinh);
-            cmd.Parameters.AddWithValue("@soCMT", txt_cmtnd.Text);
+            n.ngaysinh = DateTime.Parse(dtk_ngaysinh.Text);
+            n.soCMT = txt_cmtnd.Text;
 
+            try
+            {
+                MemoryStream str1 = new MemoryStream();
+                ptb_anh.Image.Save(str1, System.Drawing.Imaging.ImageFormat.Jpeg);
 
-            MemoryStream str1 = new MemoryStream();
-            ptb_anh.Image.Save(str1, System.Drawing.Imaging.ImageFormat.Jpeg);
+                byte[] pic = str1.ToArray();
+                n.anh = pic;
+            }
+            catch
+            {
+                n.anh = null;
 
-            byte[] pic = str1.ToArray();
-            cmd.Parameters.AddWithValue("@anh", pic);
+            }
+            n.dienthoai = txt_sdt.Text;
+            n.email = txt_email.Text;
+            n.quoctich = txt_quoctich.Text;
+            n.tongiao = txt_tongiao.Text;
+            n.trinhdongoaingu = txt_ngoaingu.Text;
+            n.dantoc = txt_dantoc.Text;
+            n.ngaycap = DateTime.Parse(dtp_ngaycap.Text);
+            n.noicap = txt_noicap.Text;
 
-
-            cmd.Parameters.AddWithValue("@dienthoai", txt_sdt.Text);
-            cmd.Parameters.AddWithValue("@email", txt_email.Text);
-
-            cmd.Parameters.AddWithValue("@quoctich", txt_quoctich.Text);
-            cmd.Parameters.AddWithValue("@tongiao", txt_tongiao.Text);
-
-            cmd.Parameters.AddWithValue("@dantoc", txt_dantoc.Text);
-            cmd.Parameters.AddWithValue("@ngaycap", DateTime.Parse(dtp_ngaycap.Text));
-
-            cmd.Parameters.AddWithValue("@noicap", txt_noicap.Text);
-
-            //Boolean tinhtranghn = false;
-            //if (cmb_tinhtranghonnhan.Text == "Đã kết hôn")
-            //{
-            //    tinhtranghn = true;
-            //}
-            //cmd.Parameters.AddWithValue("@tinhtranghonnnhan", tinhtranghn);
-            cmd.Parameters.AddWithValue("@noisinh", txt_noisinh.Text);
-
-            cmd.Parameters.AddWithValue("@quequan", txt_quequan.Text);
-            cmd.Parameters.AddWithValue("@hokhauthuongtru", txt_thuongtru.Text);
-
-            cmd.Parameters.AddWithValue("@noiohiennay", txt_tamtru.Text);
-
-
-            cmd.ExecuteNonQuery();
-
-            MessageBox.Show("Insert thành công", "Thông báo");
-
+            Boolean tinhtrang = false;
+            if (cmb_tinhtranghonnhan.Text == "Đã kết hôn")
+            {
+                tinhtrang = true;
+            }
+            n.tinhtranghonnhan = tinhtrang;
+            n.noisinh = txt_noisinh.Text;
+            n.quequan = txt_quequan.Text;
+            n.noiohiennay = txt_tamtru.Text;
+            n.hokhauthuongtru = txt_thuongtru.Text;
+            n.phongbanma = txt_maphongban.Text;
+            n.chucvuma = txt_chucvu.Text;
             
-            
-            con.Close();
+            db.nhanviens.Add(n);
+            db.SaveChanges();
             from2 fr = new from2();
             fr.Show();
             fr.load();
@@ -141,6 +127,12 @@ namespace Thuctapnhomnew
 
         }
 
+        private void btn_cancel_Click(object sender, EventArgs e)
+        {
+            from2 fr = new from2();
+            fr.Show();
+            Hide();
+        }
     }
 }
 
