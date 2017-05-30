@@ -31,6 +31,7 @@
     <EntitySetMapping Name="hopdonglaodongnhanviens">
       <EntityTypeMapping TypeName="QLNhanSuModel.hopdonglaodongnhanvien">
         <MappingFragment StoreEntitySet="hopdonglaodongnhanvien">
+          <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="ma" ColumnName="ma" />
           <ScalarProperty Name="ngayky" ColumnName="ngayky" />
           <ScalarProperty Name="ngaybatdau" ColumnName="ngaybatdau" />

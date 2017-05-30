@@ -17,7 +17,7 @@ namespace Thuctapnhomnew
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_trangchu());
+            Application.Run(new frmHopDong());
         }
     }
 }

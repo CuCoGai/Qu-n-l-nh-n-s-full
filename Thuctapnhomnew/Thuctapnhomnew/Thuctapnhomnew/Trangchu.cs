@@ -54,5 +54,12 @@ namespace Thuctapnhomnew
         {
             
         }
+
+        private void hợpĐồngLaoĐộngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmHopDong fr = new frmHopDong();
+            fr.Show();
+            Hide();
+        }
     }
 }

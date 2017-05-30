@@ -72,7 +72,7 @@
             // 
             this.tsmenu_dangnhap.Image = ((System.Drawing.Image)(resources.GetObject("tsmenu_dangnhap.Image")));
             this.tsmenu_dangnhap.Name = "tsmenu_dangnhap";
-            this.tsmenu_dangnhap.Size = new System.Drawing.Size(152, 22);
+            this.tsmenu_dangnhap.Size = new System.Drawing.Size(132, 22);
             this.tsmenu_dangnhap.Text = "Đăng nhập";
             this.tsmenu_dangnhap.Click += new System.EventHandler(this.tsmenu_dangnhap_Click);
             // 
@@ -80,7 +80,7 @@
             // 
             this.đăngXuấtToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("đăngXuấtToolStripMenuItem.Image")));
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
@@ -113,6 +113,7 @@
             this.hợpĐồngLaoĐộngToolStripMenuItem.Name = "hợpĐồngLaoĐộngToolStripMenuItem";
             this.hợpĐồngLaoĐộngToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.hợpĐồngLaoĐộngToolStripMenuItem.Text = "Hợp đồng lao động";
+            this.hợpĐồngLaoĐộngToolStripMenuItem.Click += new System.EventHandler(this.hợpĐồngLaoĐộngToolStripMenuItem_Click);
             // 
             // tl_help
             // 

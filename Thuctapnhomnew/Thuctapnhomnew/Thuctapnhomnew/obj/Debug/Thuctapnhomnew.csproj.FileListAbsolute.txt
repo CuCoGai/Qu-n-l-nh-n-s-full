@@ -43,3 +43,4 @@ D:\hoctap\Git Hub\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\Thuctapnhomne
 D:\hoctap\Git Hub\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.frm_them.resources
 D:\hoctap\Git Hub\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.frm_trangchu.resources
 D:\hoctap\Git Hub\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.csproj.GenerateResource.Cache
+D:\hoctap\Git Hub\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.frmHopDong.resources

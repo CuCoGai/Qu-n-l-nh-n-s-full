@@ -34,6 +34,7 @@
     <Property Name="ngayketthuc" Type="date" />
     <Property Name="luongthuviec" Type="money" />
     <Property Name="ten" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" />
   </EntityType>
   <EntityType Name="khenthuong">
     <Key>

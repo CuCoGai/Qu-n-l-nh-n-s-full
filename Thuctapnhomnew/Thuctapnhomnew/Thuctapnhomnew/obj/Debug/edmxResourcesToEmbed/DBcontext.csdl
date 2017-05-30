@@ -40,6 +40,7 @@
     <Property Name="luongthuviec" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="nhanviens" Relationship="Self.FK__nhanvien__hopdon__2E1BDC42" FromRole="hopdonglaodongnhanvien" ToRole="nhanvien" />
+    <Property Name="Status" Type="Boolean" />
   </EntityType>
   <EntityType Name="khenthuong">
     <Key>
