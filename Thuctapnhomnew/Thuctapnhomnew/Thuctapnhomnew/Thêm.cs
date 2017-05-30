@@ -89,8 +89,8 @@ namespace Thuctapnhomnew
             n.quequan = txt_quequan.Text;
             n.noiohiennay = txt_tamtru.Text;
             n.hokhauthuongtru = txt_thuongtru.Text;
-            n.phongbanma = txt_maphongban.Text;
-            n.chucvuma = txt_chucvu.Text;
+            //n.phongbanma = txt_maphongban.Text;
+            //n.chucvuma = txt_chucvu.Text;
             
             db.nhanviens.Add(n);
             db.SaveChanges();
