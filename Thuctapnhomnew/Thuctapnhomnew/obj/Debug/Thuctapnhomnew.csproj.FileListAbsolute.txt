@@ -13,3 +13,6 @@ C:\Users\Administrator\documents\visual studio 2015\Projects\Thuctapnhomnew\Thuc
 C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.frm_login.resources
 C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.frm_trangchu.resources
 C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.frm_them.resources
+E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\bin\Debug\Thuctapnhomnew.exe.config
+E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.exe
+E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.pdb
