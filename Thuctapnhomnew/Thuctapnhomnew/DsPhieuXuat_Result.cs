@@ -10,20 +10,13 @@
 namespace Thuctapnhomnew
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class hocvan
+    public partial class DsPhieuXuat_Result
     {
-        public hocvan()
-        {
-            this.luongcobans = new HashSet<luongcoban>();
-            this.nhanviens = new HashSet<nhanvien>();
-        }
-    
-        public string ma { get; set; }
-        public string ten { get; set; }
-    
-        public virtual ICollection<luongcoban> luongcobans { get; set; }
-        public virtual ICollection<nhanvien> nhanviens { get; set; }
+        public int MaPhieu { get; set; }
+        public string MaHienThi { get; set; }
+        public string TenDoiTac { get; set; }
+        public Nullable<System.DateTime> NgayXuat { get; set; }
+        public Nullable<decimal> TongTien { get; set; }
     }
 }

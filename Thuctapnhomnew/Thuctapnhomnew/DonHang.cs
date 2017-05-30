@@ -12,17 +12,14 @@ namespace Thuctapnhomnew
     using System;
     using System.Collections.Generic;
     
-    public partial class thongtinkhacvenhanvien
+    public partial class DonHang
     {
-        public string giadinh { get; set; }
-        public string khenthuongma { get; set; }
-        public string kyluatma { get; set; }
-        public string taikhoannganhang { get; set; }
-        public string manganhang { get; set; }
-        public string nhanvienma { get; set; }
+        public int MaDon { get; set; }
+        public Nullable<int> MaKh { get; set; }
+        public Nullable<System.DateTime> Ngay { get; set; }
+        public Nullable<int> Status { get; set; }
     
-        public virtual khenthuong khenthuong { get; set; }
-        public virtual kyluat kyluat { get; set; }
-        public virtual nhanvien nhanvien { get; set; }
+        public virtual ChiTietDonHang ChiTietDonHang { get; set; }
+        public virtual KhachHang KhachHang { get; set; }
     }
 }

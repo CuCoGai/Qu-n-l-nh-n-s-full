@@ -10,20 +10,14 @@
 namespace Thuctapnhomnew
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class phucap
+    public partial class procChiTietXuat_Result
     {
-        public phucap()
-        {
-            this.luongnhanviens = new HashSet<luongnhanvien>();
-        }
-    
-        public string chucvuma { get; set; }
-        public string ma { get; set; }
-        public string heso { get; set; }
-    
-        public virtual chucvu chucvu { get; set; }
-        public virtual ICollection<luongnhanvien> luongnhanviens { get; set; }
+        public int MaHang { get; set; }
+        public string TenHang { get; set; }
+        public string DonViTinh { get; set; }
+        public Nullable<long> SoLuong { get; set; }
+        public Nullable<decimal> GiaXuat { get; set; }
+        public Nullable<decimal> ThanhTien { get; set; }
     }
 }

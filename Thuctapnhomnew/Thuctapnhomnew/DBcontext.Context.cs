@@ -16,10 +16,10 @@ namespace Thuctapnhomnew
     using System.Data.Objects.DataClasses;
     using System.Linq;
     
-    public partial class QLNhanSuEntities1 : DbContext
+    public partial class BANHANGSIEUTHIEntities : DbContext
     {
-        public QLNhanSuEntities1()
-            : base("name=QLNhanSuEntities1")
+        public BANHANGSIEUTHIEntities()
+            : base("name=BANHANGSIEUTHIEntities")
         {
         }
     
@@ -28,20 +28,63 @@ namespace Thuctapnhomnew
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<baohiem> baohiems { get; set; }
-        public DbSet<chucvu> chucvus { get; set; }
-        public DbSet<hocvan> hocvans { get; set; }
-        public DbSet<hopdonglaodongnhanvien> hopdonglaodongnhanviens { get; set; }
-        public DbSet<khenthuong> khenthuongs { get; set; }
-        public DbSet<kyluat> kyluats { get; set; }
-        public DbSet<luongcoban> luongcobans { get; set; }
-        public DbSet<luongnhanvien> luongnhanviens { get; set; }
-        public DbSet<NguoiDung> NguoiDungs { get; set; }
-        public DbSet<nhanvien> nhanviens { get; set; }
-        public DbSet<phongban> phongbans { get; set; }
-        public DbSet<phucap> phucaps { get; set; }
+        public DbSet<ChiTietDonHang> ChiTietDonHangs { get; set; }
+        public DbSet<ChiTietNhap> ChiTietNhaps { get; set; }
+        public DbSet<ChiTietXuat> ChiTietXuats { get; set; }
+        public DbSet<ChucVu> ChucVus { get; set; }
+        public DbSet<DoiTac> DoiTacs { get; set; }
+        public DbSet<DonHang> DonHangs { get; set; }
+        public DbSet<HangHoa> HangHoas { get; set; }
+        public DbSet<KhachHang> KhachHangs { get; set; }
+        public DbSet<LoaiHang> LoaiHangs { get; set; }
+        public DbSet<NhanVien> NhanViens { get; set; }
+        public DbSet<PhieuNhap> PhieuNhaps { get; set; }
+        public DbSet<PhieuXuat> PhieuXuats { get; set; }
         public DbSet<sysdiagram> sysdiagrams { get; set; }
-        public DbSet<thongtinkhacvenhanvien> thongtinkhacvenhanviens { get; set; }
+    
+        public virtual ObjectResult<DsPhieuNhap_Result> DsPhieuNhap(Nullable<System.DateTime> from, Nullable<System.DateTime> to)
+        {
+            var fromParameter = from.HasValue ?
+                new ObjectParameter("from", from) :
+                new ObjectParameter("from", typeof(System.DateTime));
+    
+            var toParameter = to.HasValue ?
+                new ObjectParameter("to", to) :
+                new ObjectParameter("to", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<DsPhieuNhap_Result>("DsPhieuNhap", fromParameter, toParameter);
+        }
+    
+        public virtual ObjectResult<DsPhieuXuat_Result> DsPhieuXuat(Nullable<System.DateTime> from, Nullable<System.DateTime> to)
+        {
+            var fromParameter = from.HasValue ?
+                new ObjectParameter("from", from) :
+                new ObjectParameter("from", typeof(System.DateTime));
+    
+            var toParameter = to.HasValue ?
+                new ObjectParameter("to", to) :
+                new ObjectParameter("to", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<DsPhieuXuat_Result>("DsPhieuXuat", fromParameter, toParameter);
+        }
+    
+        public virtual ObjectResult<procChiTietNhap_Result> procChiTietNhap(Nullable<int> ma)
+        {
+            var maParameter = ma.HasValue ?
+                new ObjectParameter("ma", ma) :
+                new ObjectParameter("ma", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<procChiTietNhap_Result>("procChiTietNhap", maParameter);
+        }
+    
+        public virtual ObjectResult<procChiTietXuat_Result> procChiTietXuat(Nullable<int> ma)
+        {
+            var maParameter = ma.HasValue ?
+                new ObjectParameter("ma", ma) :
+                new ObjectParameter("ma", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<procChiTietXuat_Result>("procChiTietXuat", maParameter);
+        }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

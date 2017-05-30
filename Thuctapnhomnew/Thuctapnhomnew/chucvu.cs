@@ -12,18 +12,17 @@ namespace Thuctapnhomnew
     using System;
     using System.Collections.Generic;
     
-    public partial class chucvu
+    public partial class ChucVu
     {
-        public chucvu()
+        public ChucVu()
         {
-            this.nhanviens = new HashSet<nhanvien>();
-            this.phucaps = new HashSet<phucap>();
+            this.NhanViens = new HashSet<NhanVien>();
         }
     
-        public string ma { get; set; }
-        public string ten { get; set; }
+        public int MaChucVu { get; set; }
+        public string ChucVu1 { get; set; }
+        public Nullable<int> QuyenTruyCap { get; set; }
     
-        public virtual ICollection<nhanvien> nhanviens { get; set; }
-        public virtual ICollection<phucap> phucaps { get; set; }
+        public virtual ICollection<NhanVien> NhanViens { get; set; }
     }
 }

@@ -12,26 +12,23 @@ namespace Thuctapnhomnew
     using System;
     using System.Collections.Generic;
     
-    public partial class NhanVien
+    public partial class DoiTac
     {
-        public NhanVien()
+        public DoiTac()
         {
             this.PhieuNhaps = new HashSet<PhieuNhap>();
             this.PhieuXuats = new HashSet<PhieuXuat>();
         }
     
-        public int MaNv { get; set; }
-        public string TenNv { get; set; }
+        public int MaDoiTac { get; set; }
+        public string TenDoiTac { get; set; }
         public string DiaChi { get; set; }
-        public Nullable<int> MaChucVu { get; set; }
-        public Nullable<double> HeSoLuong { get; set; }
-        public Nullable<bool> GioiTinh { get; set; }
-        public Nullable<System.DateTime> NgaySinh { get; set; }
+        public string SoDienThoai { get; set; }
+        public string Website { get; set; }
+        public string NguoiDaiDien { get; set; }
+        public string SdtNguoiDaiDien { get; set; }
         public Nullable<int> Status { get; set; }
-        public string TenDangNhap { get; set; }
-        public string MatKhau { get; set; }
     
-        public virtual ChucVu ChucVu { get; set; }
         public virtual ICollection<PhieuNhap> PhieuNhaps { get; set; }
         public virtual ICollection<PhieuXuat> PhieuXuats { get; set; }
     }

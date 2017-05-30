@@ -12,20 +12,17 @@ namespace Thuctapnhomnew
     using System;
     using System.Collections.Generic;
     
-    public partial class hopdonglaodongnhanvien
+    public partial class LoaiHang
     {
-        public hopdonglaodongnhanvien()
+        public LoaiHang()
         {
-            this.nhanviens = new HashSet<nhanvien>();
+            this.HangHoas = new HashSet<HangHoa>();
         }
     
-        public string ma { get; set; }
-        public Nullable<System.DateTime> ngayky { get; set; }
-        public Nullable<System.DateTime> ngaybatdau { get; set; }
-        public Nullable<System.DateTime> ngayketthuc { get; set; }
-        public Nullable<decimal> luongthuviec { get; set; }
-        public string ten { get; set; }
+        public int MaLoai { get; set; }
+        public string DienGiai { get; set; }
+        public Nullable<int> Status { get; set; }
     
-        public virtual ICollection<nhanvien> nhanviens { get; set; }
+        public virtual ICollection<HangHoa> HangHoas { get; set; }
     }
 }

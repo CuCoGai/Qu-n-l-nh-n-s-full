@@ -12,20 +12,19 @@ namespace Thuctapnhomnew
     using System;
     using System.Collections.Generic;
     
-    public partial class luongcoban
+    public partial class KhachHang
     {
-        public luongcoban()
+        public KhachHang()
         {
-            this.luongnhanviens = new HashSet<luongnhanvien>();
+            this.DonHangs = new HashSet<DonHang>();
         }
     
-        public string ma { get; set; }
-        public Nullable<double> heso { get; set; }
-        public string ten { get; set; }
-        public string hocvanma { get; set; }
-        public Nullable<decimal> giatri { get; set; }
+        public int MaKh { get; set; }
+        public string TenKh { get; set; }
+        public string DiaChi { get; set; }
+        public string SoDienThoai { get; set; }
+        public Nullable<int> Status { get; set; }
     
-        public virtual hocvan hocvan { get; set; }
-        public virtual ICollection<luongnhanvien> luongnhanviens { get; set; }
+        public virtual ICollection<DonHang> DonHangs { get; set; }
     }
 }

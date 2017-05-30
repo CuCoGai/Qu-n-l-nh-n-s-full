@@ -10,11 +10,13 @@
 namespace Thuctapnhomnew
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class NguoiDung
+    public partial class DsPhieuNhap_Result
     {
-        public string username { get; set; }
-        public string pass { get; set; }
+        public int MaPhieu { get; set; }
+        public string MaHienThi { get; set; }
+        public string TenDoiTac { get; set; }
+        public Nullable<System.DateTime> NgayNhap { get; set; }
+        public Nullable<decimal> TongTien { get; set; }
     }
 }

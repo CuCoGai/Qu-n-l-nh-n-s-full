@@ -28,3 +28,18 @@ C:\Users\Administrator\Documents\GitHub\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thucta
 C:\Users\Administrator\Documents\GitHub\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.frm_them.resources
 C:\Users\Administrator\Documents\GitHub\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.frm_trangchu.resources
 C:\Users\Administrator\Documents\GitHub\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.csproj.GenerateResource.Cache
+D:\hoctap\Git Hub\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\Thuctapnhomnew\bin\Debug\Thuctapnhomnew.exe.config
+D:\hoctap\Git Hub\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.exe
+D:\hoctap\Git Hub\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.pdb
+D:\hoctap\Git Hub\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\Thuctapnhomnew\bin\Debug\Thuctapnhomnew.exe
+D:\hoctap\Git Hub\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\Thuctapnhomnew\bin\Debug\Thuctapnhomnew.pdb
+D:\hoctap\Git Hub\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\Thuctapnhomnew\bin\Debug\EntityFramework.dll
+D:\hoctap\Git Hub\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\Thuctapnhomnew\bin\Debug\EntityFramework.xml
+D:\hoctap\Git Hub\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.csprojResolveAssemblyReference.cache
+D:\hoctap\Git Hub\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.from2.resources
+D:\hoctap\Git Hub\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.frm_login.resources
+D:\hoctap\Git Hub\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.Properties.Resources.resources
+D:\hoctap\Git Hub\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.Sua.resources
+D:\hoctap\Git Hub\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.frm_them.resources
+D:\hoctap\Git Hub\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.frm_trangchu.resources
+D:\hoctap\Git Hub\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.csproj.GenerateResource.Cache

@@ -10,18 +10,14 @@
 namespace Thuctapnhomnew
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class khenthuong
+    public partial class procChiTietNhap_Result
     {
-        public khenthuong()
-        {
-            this.thongtinkhacvenhanviens = new HashSet<thongtinkhacvenhanvien>();
-        }
-    
-        public string ma { get; set; }
-        public string noidung { get; set; }
-    
-        public virtual ICollection<thongtinkhacvenhanvien> thongtinkhacvenhanviens { get; set; }
+        public int MaHang { get; set; }
+        public string TenHang { get; set; }
+        public string DonViTinh { get; set; }
+        public Nullable<long> SoLuong { get; set; }
+        public Nullable<decimal> GiaNhap { get; set; }
+        public Nullable<decimal> ThanhTien { get; set; }
     }
 }

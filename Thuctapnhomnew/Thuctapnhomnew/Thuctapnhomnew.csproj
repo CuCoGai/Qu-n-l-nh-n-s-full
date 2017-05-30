@@ -54,11 +54,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="baohiem.cs">
-      <DependentUpon>QLNS.tt</DependentUpon>
+    <Compile Include="ChiTietDonHang.cs">
+      <DependentUpon>DBcontext.tt</DependentUpon>
     </Compile>
-    <Compile Include="chucvu.cs">
-      <DependentUpon>QLNS.tt</DependentUpon>
+    <Compile Include="ChiTietNhap.cs">
+      <DependentUpon>DBcontext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChiTietXuat.cs">
+      <DependentUpon>DBcontext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChucVu.cs">
+      <DependentUpon>DBcontext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBcontext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBcontext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBcontext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBcontext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBcontext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBcontext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DoiTac.cs">
+      <DependentUpon>DBcontext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DonHang.cs">
+      <DependentUpon>DBcontext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DsPhieuNhap_Result.cs">
+      <DependentUpon>DBcontext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DsPhieuXuat_Result.cs">
+      <DependentUpon>DBcontext.tt</DependentUpon>
     </Compile>
     <Compile Include="from2.cs">
       <SubType>Form</SubType>
@@ -66,17 +99,14 @@
     <Compile Include="from2.Designer.cs">
       <DependentUpon>from2.cs</DependentUpon>
     </Compile>
-    <Compile Include="hocvan.cs">
-      <DependentUpon>QLNS.tt</DependentUpon>
+    <Compile Include="HangHoa.cs">
+      <DependentUpon>DBcontext.tt</DependentUpon>
     </Compile>
-    <Compile Include="hopdonglaodongnhanvien.cs">
-      <DependentUpon>QLNS.tt</DependentUpon>
+    <Compile Include="KhachHang.cs">
+      <DependentUpon>DBcontext.tt</DependentUpon>
     </Compile>
-    <Compile Include="khenthuong.cs">
-      <DependentUpon>QLNS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="kyluat.cs">
-      <DependentUpon>QLNS.tt</DependentUpon>
+    <Compile Include="LoaiHang.cs">
+      <DependentUpon>DBcontext.tt</DependentUpon>
     </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
@@ -84,46 +114,28 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>login.cs</DependentUpon>
     </Compile>
-    <Compile Include="luongcoban.cs">
-      <DependentUpon>QLNS.tt</DependentUpon>
+    <Compile Include="NhanVien.cs">
+      <DependentUpon>DBcontext.tt</DependentUpon>
     </Compile>
-    <Compile Include="luongnhanvien.cs">
-      <DependentUpon>QLNS.tt</DependentUpon>
+    <Compile Include="PhieuNhap.cs">
+      <DependentUpon>DBcontext.tt</DependentUpon>
     </Compile>
-    <Compile Include="NguoiDung.cs">
-      <DependentUpon>QLNS.tt</DependentUpon>
+    <Compile Include="PhieuXuat.cs">
+      <DependentUpon>DBcontext.tt</DependentUpon>
     </Compile>
-    <Compile Include="nhanvien.cs">
-      <DependentUpon>QLNS.tt</DependentUpon>
+    <Compile Include="procChiTietNhap_Result.cs">
+      <DependentUpon>DBcontext.tt</DependentUpon>
     </Compile>
-    <Compile Include="phongban.cs">
-      <DependentUpon>QLNS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="phucap.cs">
-      <DependentUpon>QLNS.tt</DependentUpon>
+    <Compile Include="procChiTietXuat_Result.cs">
+      <DependentUpon>DBcontext.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QLNS.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLNS.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="QLNS.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLNS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="QLNS.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLNS.edmx</DependentUpon>
-    </Compile>
     <Compile Include="sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>QLNS.tt</DependentUpon>
+      <DependentUpon>DBcontext.tt</DependentUpon>
     </Compile>
     <Compile Include="sp_helpdiagrams_Result.cs">
-      <DependentUpon>QLNS.tt</DependentUpon>
+      <DependentUpon>DBcontext.tt</DependentUpon>
     </Compile>
     <Compile Include="Sua.cs">
       <SubType>Form</SubType>
@@ -132,10 +144,7 @@
       <DependentUpon>Sua.cs</DependentUpon>
     </Compile>
     <Compile Include="sysdiagram.cs">
-      <DependentUpon>QLNS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="thongtinkhacvenhanvien.cs">
-      <DependentUpon>QLNS.tt</DependentUpon>
+      <DependentUpon>DBcontext.tt</DependentUpon>
     </Compile>
     <Compile Include="Thêm.cs">
       <SubType>Form</SubType>
@@ -173,6 +182,13 @@
     <EmbeddedResource Include="Trangchu.resx">
       <DependentUpon>Trangchu.cs</DependentUpon>
     </EmbeddedResource>
+    <EntityDeploy Include="DBcontext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DBcontext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DBcontext.edmx.diagram">
+      <DependentUpon>DBcontext.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -183,13 +199,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EntityDeploy Include="QLNS.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QLNS.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="QLNS.edmx.diagram">
-      <DependentUpon>QLNS.edmx</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -198,15 +207,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="QLNS.Context.tt">
+    <Content Include="DBcontext.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QLNS.edmx</DependentUpon>
-      <LastGenOutput>QLNS.Context.cs</LastGenOutput>
+      <DependentUpon>DBcontext.edmx</DependentUpon>
+      <LastGenOutput>DBcontext.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="QLNS.tt">
+    <Content Include="DBcontext.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QLNS.edmx</DependentUpon>
-      <LastGenOutput>QLNS.cs</LastGenOutput>
+      <DependentUpon>DBcontext.edmx</DependentUpon>
+      <LastGenOutput>DBcontext.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -12,18 +12,15 @@ namespace Thuctapnhomnew
     using System;
     using System.Collections.Generic;
     
-    public partial class phongban
+    public partial class ChiTietNhap
     {
-        public phongban()
-        {
-            this.nhanviens = new HashSet<nhanvien>();
-        }
+        public int MaPhieu { get; set; }
+        public int MaHang { get; set; }
+        public Nullable<long> SoLuong { get; set; }
+        public Nullable<decimal> GiaNhap { get; set; }
+        public Nullable<bool> Status { get; set; }
     
-        public string ma { get; set; }
-        public string ten { get; set; }
-        public string sdt { get; set; }
-        public string email { get; set; }
-    
-        public virtual ICollection<nhanvien> nhanviens { get; set; }
+        public virtual HangHoa HangHoa { get; set; }
+        public virtual PhieuNhap PhieuNhap { get; set; }
     }
 }
