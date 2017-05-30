@@ -68,14 +68,14 @@
             // tsmenu_dangnhap
             // 
             this.tsmenu_dangnhap.Name = "tsmenu_dangnhap";
-            this.tsmenu_dangnhap.Size = new System.Drawing.Size(152, 22);
+            this.tsmenu_dangnhap.Size = new System.Drawing.Size(132, 22);
             this.tsmenu_dangnhap.Text = "Đăng nhập";
             this.tsmenu_dangnhap.Click += new System.EventHandler(this.tsmenu_dangnhap_Click);
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
@@ -101,6 +101,7 @@
             this.phòngBanToolStripMenuItem.Name = "phòngBanToolStripMenuItem";
             this.phòngBanToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.phòngBanToolStripMenuItem.Text = "Phòng ban";
+            this.phòngBanToolStripMenuItem.Click += new System.EventHandler(this.phòngBanToolStripMenuItem_Click);
             // 
             // tl_help
             // 

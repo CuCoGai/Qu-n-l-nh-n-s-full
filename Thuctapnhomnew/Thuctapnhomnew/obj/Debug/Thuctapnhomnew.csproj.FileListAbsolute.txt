@@ -13,3 +13,15 @@ C:\Users\Administrator\documents\visual studio 2015\Projects\Thuctapnhomnew\Thuc
 C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.frm_login.resources
 C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.frm_trangchu.resources
 C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.frm_them.resources
+C:\Users\Administrator\Documents\GitHub\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\bin\Debug\Thuctapnhomnew.exe.config
+C:\Users\Administrator\Documents\GitHub\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.exe
+C:\Users\Administrator\Documents\GitHub\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.pdb
+C:\Users\Administrator\Documents\GitHub\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\GitHub\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.from2.resources
+C:\Users\Administrator\Documents\GitHub\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.frm_login.resources
+C:\Users\Administrator\Documents\GitHub\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.frmPhongban.resources
+C:\Users\Administrator\Documents\GitHub\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.Properties.Resources.resources
+C:\Users\Administrator\Documents\GitHub\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.Sua.resources
+C:\Users\Administrator\Documents\GitHub\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.frm_them.resources
+C:\Users\Administrator\Documents\GitHub\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.frm_trangchu.resources
+C:\Users\Administrator\Documents\GitHub\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.csproj.GenerateResource.Cache

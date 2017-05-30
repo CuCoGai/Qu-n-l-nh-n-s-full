@@ -48,5 +48,12 @@ namespace Thuctapnhomnew
             Hide();
 
         }
+
+        private void phòngBanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPhongban f = new frmPhongban();
+            f.Show();
+            Hide();
+        }
     }
 }
