@@ -1,21 +1,4 @@
-c:\users\administrator\documents\visual studio 2015\Projects\Thuctapnhomnew\Thuctapnhomnew\bin\Debug\Thuctapnhomnew.exe.config
-C:\Users\Administrator\documents\visual studio 2015\Projects\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.csprojResolveAssemblyReference.cache
-C:\Users\Administrator\documents\visual studio 2015\Projects\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.from2.resources
-C:\Users\Administrator\documents\visual studio 2015\Projects\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.Properties.Resources.resources
-C:\Users\Administrator\documents\visual studio 2015\Projects\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.csproj.GenerateResource.Cache
-C:\Users\Administrator\documents\visual studio 2015\Projects\Thuctapnhomnew\Thuctapnhomnew\bin\Debug\Thuctapnhomnew.exe
-C:\Users\Administrator\documents\visual studio 2015\Projects\Thuctapnhomnew\Thuctapnhomnew\bin\Debug\Thuctapnhomnew.pdb
-C:\Users\Administrator\documents\visual studio 2015\Projects\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.exe
-C:\Users\Administrator\documents\visual studio 2015\Projects\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.pdb
-C:\Users\Administrator\documents\visual studio 2015\Projects\Thuctapnhomnew\Thuctapnhomnew\bin\Debug\EntityFramework.dll
-C:\Users\Administrator\documents\visual studio 2015\Projects\Thuctapnhomnew\Thuctapnhomnew\bin\Debug\EntityFramework.xml
-C:\Users\Administrator\documents\visual studio 2015\Projects\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.Sua.resources
-C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.frm_login.resources
-C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.frm_trangchu.resources
-C:\Users\Administrator\Documents\Visual Studio 2015\Projects\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.frm_them.resources
 E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\bin\Debug\Thuctapnhomnew.exe.config
-E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.exe
-E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.pdb
 E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\bin\Debug\Thuctapnhomnew.exe
 E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\bin\Debug\Thuctapnhomnew.pdb
 E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\bin\Debug\EntityFramework.dll
@@ -28,3 +11,5 @@ E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Th
 E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.frm_them.resources
 E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.frm_trangchu.resources
 E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.csproj.GenerateResource.Cache
+E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.exe
+E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.pdb
