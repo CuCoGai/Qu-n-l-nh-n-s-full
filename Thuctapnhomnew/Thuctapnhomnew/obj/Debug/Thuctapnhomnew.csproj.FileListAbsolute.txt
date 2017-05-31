@@ -1,0 +1,15 @@
+E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\bin\Debug\Thuctapnhomnew.exe.config
+E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\bin\Debug\Thuctapnhomnew.exe
+E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\bin\Debug\Thuctapnhomnew.pdb
+E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\bin\Debug\EntityFramework.dll
+E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\bin\Debug\EntityFramework.xml
+E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.csprojResolveAssemblyReference.cache
+E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.from2.resources
+E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.frm_login.resources
+E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.Properties.Resources.resources
+E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.Sua.resources
+E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.frm_them.resources
+E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.frm_trangchu.resources
+E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.csproj.GenerateResource.Cache
+E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.exe
+E:\HVKTQS\KI 2 2017\Thực tập nhóm_TH13\Qu-n-l-nh-n-s-full\Thuctapnhomnew\Thuctapnhomnew\obj\Debug\Thuctapnhomnew.pdb
