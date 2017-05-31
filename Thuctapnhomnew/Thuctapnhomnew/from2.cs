@@ -15,6 +15,7 @@ namespace Thuctapnhomnew
 {
     public partial class from2 : Form
     {
+        QLNhanSuEntities1 db = new QLNhanSuEntities1();
         public from2()
         {
             InitializeComponent();
@@ -29,7 +30,7 @@ namespace Thuctapnhomnew
         public static class ketnoi
         {
 
-            public static string chuoiketnoi = @"Data Source=DESKTOP-MON8K1N\SQLEXPRESS;Initial Catalog=QLNhanSu;Integrated Security=True";
+            public static string chuoiketnoi = @"Data Source=AMYHUYENDIEU;Initial Catalog=QLNhanSu;Integrated Security=True";
             //  public static string chuoiketnoi = @"Data Source=HONG_NGOC\SQLEXPRESS;Initial Catalog=QLNhanSu;Integrated Security=True";
             public static SqlConnection con;
             public static SqlCommand cmd;
@@ -195,5 +196,130 @@ namespace Thuctapnhomnew
                 ketnoi.dongketnoi();
             }
         }
+
+
+
+        #region lương nhân viên
+        private void btnShow_Click(object sender, EventArgs e)
+        {
+            this.dataGridViewLuong.DataSource = db.luongnhanviens.ToList();
+            this.dataGridViewLuong.Columns[0].HeaderText = "Mã Nhân Viên";
+            this.dataGridViewLuong.Columns[1].HeaderText = "Mã LCB";
+            this.dataGridViewLuong.Columns[2].HeaderText = "Mã PC";
+            this.dataGridViewLuong.Columns[3].HeaderText = "Số ngày công";
+            this.dataGridViewLuong.Columns[4].HeaderText = "Số giờ làm thêm";
+            this.dataGridViewLuong.Columns[5].HeaderText = "Thưởng";
+            this.dataGridViewLuong.Columns[6].HeaderText = "Tạm Ứng";
+            this.dataGridViewLuong.Columns[7].HeaderText = "Ngày Lập";
+
+        }
+        void Save()
+        {
+            DialogResult dlr = MessageBox.Show("Lưu tất cả thay đổi?",
+                            "Save", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            if (dlr == DialogResult.Yes)
+            {
+                db.SaveChanges();
+            }
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                luongnhanvien luongnv = new luongnhanvien();
+                luongnv.nhanvienma = this.tbxMaNV_L.Text;
+                luongnv.ma = this.tbxIDLuong.Text;
+                luongnv.phucapma = this.tbxMaPC.Text;
+                luongnv.luongcobanma = this.tbxMaLCB.Text;
+                luongnv.SoNgayCong = Int32.Parse(tbxNgayCong.Text);
+                luongnv.SoGioLamThem = Int32.Parse(tbcGioLamThem.Text);
+                luongnv.Thuong = Int32.Parse(tbxThuong.Text);
+                luongnv.TamUng = Int32.Parse(tbxTamUng.Text);
+                
+                db.luongnhanviens.Add(luongnv);
+                MessageBox.Show("Thêm Thành Công!!!");
+            }
+            catch
+            {
+                MessageBox.Show("Thêm Thất bại!!");
+            }
+            Save();
+        }
+
+
+        
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            String ma = this.dataGridViewLuong.CurrentRow.Cells[0].Value.ToString();
+            DialogResult dr = MessageBox.Show("Are you sure?", "Confirm", MessageBoxButtons.YesNo);
+            if (dr == System.Windows.Forms.DialogResult.Yes)
+            {
+                try
+                {
+                    luongnhanvien h = db.luongnhanviens.Single(s => s.ma.Equals(ma));
+                    db.luongnhanviens.Remove(h);
+                    db.SaveChanges();
+                    MessageBox.Show("Delete Success");
+                }
+                catch
+                {
+                    MessageBox.Show("Delete fail!!");
+                }
+            }
+
+            Save();
+        }
+
+        
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            int ma = int.Parse(this.dataGridViewLuong.CurrentRow.Cells[0].Value.ToString());
+            luongnhanvien dt = db.luongnhanviens.Single(s => s.ma.Equals(ma));
+            if (this.tbxMaNV_L.Text.Length != 0)
+                dt.nhanvienma = tbxMaNV_L.Text;
+            if (this.tbxMaLCB.Text.Length != 0)
+                dt.luongcobanma = this.tbxMaLCB.Text;
+            if (this.tbxMaPC.Text.Length != 0)
+                dt.phucapma = this.tbxMaPC.Text;
+            if (this.tbxIDLuong.Text.Length != 0)
+                dt.ma = this.tbxIDLuong.Text;
+            if (this.tbxNgayCong.Text.Length != 0)
+                dt.SoNgayCong = Int32.Parse(tbxNgayCong.Text);
+            if (this.tbcGioLamThem.Text.Length != 0)
+                dt.SoGioLamThem = Int32.Parse(tbcGioLamThem.Text);
+            if (this.tbxThuong.Text.Length != 0)
+                dt.Thuong = Int32.Parse( tbxThuong.Text);
+            if (this.tbxTamUng.Text.Length != 0)
+                dt.TamUng = Int32.Parse(tbxTamUng.Text);
+            dt.NgayLap = DateTime.Parse( dtpkNgayLapLuong.Text);
+
+            db.SaveChanges();
+        }
+
+
+        private void btnShowLCB_Click(object sender, EventArgs e)
+        {
+            this.dataGridViewLuong.DataSource = db.luongcobans.ToList();
+            this.dataGridViewLuong.Columns[0].HeaderText = "Mã LCB";
+            this.dataGridViewLuong.Columns[1].HeaderText = "Hệ số";
+            this.dataGridViewLuong.Columns[2].HeaderText = "Tên";
+            this.dataGridViewLuong.Columns[3].HeaderText = "Mã Học vấn";
+            this.dataGridViewLuong.Columns[4].HeaderText = "Giá trị";
+            
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.dataGridViewLuong.DataSource = db.phucaps.ToList();
+            this.dataGridViewLuong.Columns[0].HeaderText = "Mã PC";
+            this.dataGridViewLuong.Columns[1].HeaderText = "Hệ số";
+            this.dataGridViewLuong.Columns[2].HeaderText = "Mã Chức vụ";
+        }
+
+        #endregion
     }
 }
