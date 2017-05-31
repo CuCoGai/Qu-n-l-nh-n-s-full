@@ -30,7 +30,7 @@ namespace Thuctapnhomnew
         public static class ketnoi
         {
 
-            public static string chuoiketnoi = @"Data Source=AMYHUYENDIEU;Initial Catalog=QLNhanSu;Integrated Security=True";
+            public static string chuoiketnoi = @"Data Source=DESKTOP-MON8K1N\SQLEXPRESS;Initial Catalog=QLNhanSu;Integrated Security=True";
             //  public static string chuoiketnoi = @"Data Source=HONG_NGOC\SQLEXPRESS;Initial Catalog=QLNhanSu;Integrated Security=True";
             public static SqlConnection con;
             public static SqlCommand cmd;
