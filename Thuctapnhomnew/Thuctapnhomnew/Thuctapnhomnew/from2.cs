@@ -13,8 +13,10 @@ using System.IO;
 
 namespace Thuctapnhomnew
 {
+ 
     public partial class from2 : Form
     {
+       QLNhanSuEntities db = new QLNhanSuEntities();
         public from2()
         {
             InitializeComponent();
@@ -75,6 +77,7 @@ namespace Thuctapnhomnew
         }
         public void load()
         {
+            QLNhanSuEntities db = new QLNhanSuEntities();
             ketnoi.openketnoi();
             //load comboBox
             cmb_gioitinh.Items.Clear();
@@ -87,15 +90,30 @@ namespace Thuctapnhomnew
             cmb_tinhtranghonnhan.Items.Add("Chưa kết hôn");
             // cmb_tinhtranghonnhan.SelectedItem = "True";
 
-
-
+            this.dgv_dsnv.DataSource = db.nhanviens.Where(s => s.status == null).Select( s => new
+            {
+                ID = s.ma,
+                Name = s.ten,
+                Birthday = s.ngaysinh,
+                Gender = s.gioitinh == true ? "Nam" : "Nữ",
+                Add = s.diachilienlac,
+                Anh = s.anh,
+             
+          
+            }).ToList();
+            dgv_dsnv.Columns[0].HeaderText = "Mã nhân viên";
+            dgv_dsnv.Columns[1].HeaderText = "Tên nhân viên";
+            dgv_dsnv.Columns[2].HeaderText = "Ngày Sinh";
+            dgv_dsnv.Columns[3].HeaderText = "Giới Tính";
+            dgv_dsnv.Columns[4].HeaderText = "Địa chỉ";
+            dgv_dsnv.Columns[5].HeaderText = "Ảnh";
             //Load DataGridView
-            dgv_dsnv.DataSource = ketnoi.gettable("select ma as N'Mã',ten as N'Họ tên',ngaysinh as N'Ngày sinh', case gioitinh when 1 then 'Nam' when 0 then N'Nữ' end as N'Gioi tinh',soCMT as N'CMTND',anh as N'Ảnh nhân viên',dienthoai as N'SĐT',email,quoctich,tongiao,dantoc,ngaycap,noicap,case tinhtranghonnhan when 1 then N'Đã kết hôn' when 0 then N'Chưa kết hôn 'end as N'Trình trạng hôn nhân',noisinh,quequan,hokhauthuongtru,noiohiennay   from nhanvien");
-           
-            // btn_chapnhan.Enabled = false;
-            //  btn_huy.Enabled = false;
-            ketnoi.dongketnoi();
-            QLNhanSuEntities db = new QLNhanSuEntities();
+            //dgv_dsnv.DataSource = ketnoi.gettable("select ma as N'Mã',ten as N'Họ tên',ngaysinh as N'Ngày sinh', case gioitinh when 1 then 'Nam' when 0 then N'Nữ' end as N'Gioi tinh',soCMT as N'CMTND',anh as N'Ảnh nhân viên',dienthoai as N'SĐT',email,quoctich,tongiao,dantoc,ngaycap,noicap,case tinhtranghonnhan when 1 then N'Đã kết hôn' when 0 then N'Chưa kết hôn 'end as N'Trình trạng hôn nhân',noisinh,quequan,hokhauthuongtru,noiohiennay   from nhanvien");
+
+            //// btn_chapnhan.Enabled = false;
+            ////  btn_huy.Enabled = false;
+            //ketnoi.dongketnoi();
+
             var list = (from s in db.luongcobans select s.ma ).ToList();
             dgv_luong.DataSource = list;
 
@@ -197,10 +215,12 @@ namespace Thuctapnhomnew
             DialogResult = MessageBox.Show("Bạn có chắc muốn xóa!", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (DialogResult == DialogResult.OK)
             {
-                ketnoi.openketnoi();
-                ketnoi.executeQuery("delete from nhanvien where ma='" + dgv_dsnv.Rows[dgv_dsnv.CurrentCell.RowIndex].Cells[0].Value.ToString() + "' ");
+                string id =dgv_dsnv.CurrentRow.Cells[0].Value.ToString();
+
+                nhanvien nv = db.nhanviens.Single(s => s.ma == id);
+                nv.status = 0;
+                db.SaveChanges();
                 load();
-                ketnoi.dongketnoi();
             }
         }
 

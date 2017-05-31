@@ -25,6 +25,7 @@ namespace Thuctapnhomnew
         public Nullable<System.DateTime> ngayketthuc { get; set; }
         public Nullable<decimal> luongthuviec { get; set; }
         public string ten { get; set; }
+        public Nullable<int> status { get; set; }
     
         public virtual ICollection<nhanvien> nhanviens { get; set; }
     }

@@ -39,6 +39,7 @@
           <Property Name="ngayketthuc" Type="date" />
           <Property Name="luongthuviec" Type="money" />
           <Property Name="ten" Type="nvarchar" MaxLength="50" />
+          <Property Name="status" Type="int" />
         </EntityType>
         <EntityType Name="khenthuong">
           <Key>
@@ -113,6 +114,7 @@
           <Property Name="phongbanma" Type="varchar" MaxLength="10" />
           <Property Name="hopdonglaodongnhanvienma" Type="varchar" MaxLength="10" />
           <Property Name="dantoc" Type="nvarchar" MaxLength="50" />
+          <Property Name="status" Type="int" />
         </EntityType>
         <EntityType Name="phongban">
           <Key>
@@ -453,6 +455,7 @@
           <Property Name="luongthuviec" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="nhanviens" Relationship="Self.FK__nhanvien__hopdon__2D27B809" FromRole="hopdonglaodongnhanvien" ToRole="nhanvien" />
+          <Property Name="status" Type="Int32" />
         </EntityType>
         <EntityType Name="khenthuong">
           <Key>
@@ -541,6 +544,7 @@
           <NavigationProperty Name="luongnhanviens" Relationship="Self.FK__luongnhan__nhanv__29572725" FromRole="nhanvien" ToRole="luongnhanvien" />
           <NavigationProperty Name="phongban" Relationship="Self.FK__nhanvien__phongb__2E1BDC42" FromRole="nhanvien" ToRole="phongban" />
           <NavigationProperty Name="thongtinkhacvenhanvien" Relationship="Self.FK__thongtink__nhanv__31EC6D26" FromRole="nhanvien" ToRole="thongtinkhacvenhanvien" />
+          <Property Name="status" Type="Int32" />
         </EntityType>
         <EntityType Name="phongban">
           <Key>
@@ -889,6 +893,7 @@
           <EntitySetMapping Name="hopdonglaodongnhanviens">
             <EntityTypeMapping TypeName="QLNhanSuModel1.hopdonglaodongnhanvien">
               <MappingFragment StoreEntitySet="hopdonglaodongnhanvien">
+                <ScalarProperty Name="status" ColumnName="status" />
                 <ScalarProperty Name="ma" ColumnName="ma" />
                 <ScalarProperty Name="ngayky" ColumnName="ngayky" />
                 <ScalarProperty Name="ngaybatdau" ColumnName="ngaybatdau" />
@@ -951,6 +956,7 @@
           <EntitySetMapping Name="nhanviens">
             <EntityTypeMapping TypeName="QLNhanSuModel1.nhanvien">
               <MappingFragment StoreEntitySet="nhanvien">
+                <ScalarProperty Name="status" ColumnName="status" />
                 <ScalarProperty Name="ma" ColumnName="ma" />
                 <ScalarProperty Name="ten" ColumnName="ten" />
                 <ScalarProperty Name="ngaysinh" ColumnName="ngaysinh" />
