@@ -91,13 +91,18 @@ namespace Thuctapnhomnew
             n.hokhauthuongtru = txt_thuongtru.Text;
             n.phongbanma = txt_maphongban.Text;
             n.chucvuma = txt_chucvu.Text;
-            
+            n.hocvanma = txt_hocvan.Text;
             db.nhanviens.Add(n);
-            db.SaveChanges();
+            try { db.SaveChanges(); }
+            catch(Exception ex) {
+                MessageBox.Show("Lỗi" + ex);
+            }
+          
             from2 fr = new from2();
-            fr.Show();
-            fr.load();
+            fr.Show(this);
             Hide();
+            fr.load();
+           
         }
 
         private void btn_brown_Click(object sender, EventArgs e)

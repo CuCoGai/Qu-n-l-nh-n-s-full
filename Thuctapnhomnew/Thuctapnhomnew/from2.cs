@@ -110,7 +110,7 @@ namespace Thuctapnhomnew
             else
                 ptb_anh.Image = null;
             string id = dgv_dsnv.CurrentRow.Cells[0].Value.ToString();
-            QLNhanSuEntities1 nv = new QLNhanSuEntities1();
+            QLNhanSuEntities nv = new QLNhanSuEntities();
             nhanvien newnv = nv.nhanviens.Single(s => s.ma == id);
             txt_manv.Text = newnv.ma;
             txt_hoten.Text = newnv.ten;

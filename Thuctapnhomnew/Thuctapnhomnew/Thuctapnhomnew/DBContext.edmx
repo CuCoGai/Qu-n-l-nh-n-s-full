@@ -39,6 +39,7 @@
           <Property Name="ngayketthuc" Type="date" />
           <Property Name="luongthuviec" Type="money" />
           <Property Name="ten" Type="nvarchar" MaxLength="50" />
+          <Property Name="status" Type="int" />
         </EntityType>
         <EntityType Name="khenthuong">
           <Key>
@@ -113,6 +114,7 @@
           <Property Name="phongbanma" Type="varchar" MaxLength="10" />
           <Property Name="hopdonglaodongnhanvienma" Type="varchar" MaxLength="10" />
           <Property Name="dantoc" Type="nvarchar" MaxLength="50" />
+          <Property Name="status" Type="int" />
         </EntityType>
         <EntityType Name="phongban">
           <Key>
@@ -131,16 +133,6 @@
           <Property Name="ma" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="heso" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
         <EntityType Name="thongtinkhacvenhanvien">
           <Key>
             <PropertyRef Name="nhanvienma" />
@@ -151,8 +143,10 @@
           <Property Name="taikhoannganhang" Type="varchar" MaxLength="20" />
           <Property Name="manganhang" Type="varchar" MaxLength="10" />
           <Property Name="nhanvienma" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="soLD" Type="int" />
+          <Property Name="soBHXH" Type="int" />
         </EntityType>
-        <Association Name="FK__baohiem__nhanvie__267ABA7A">
+        <Association Name="FK__baohiem__nhanvie__276EDEB3">
           <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="0..1" />
           <End Role="baohiem" Type="Self.baohiem" Multiplicity="*" />
           <ReferentialConstraint>
@@ -164,7 +158,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__luongcoba__hocva__276EDEB3">
+        <Association Name="FK__luongcoba__hocva__286302EC">
           <End Role="hocvan" Type="Self.hocvan" Multiplicity="0..1" />
           <End Role="luongcoban" Type="Self.luongcoban" Multiplicity="*" />
           <ReferentialConstraint>
@@ -176,7 +170,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__luongnhan__luong__286302EC">
+        <Association Name="FK__luongnhan__luong__29572725">
           <End Role="luongcoban" Type="Self.luongcoban" Multiplicity="0..1" />
           <End Role="luongnhanvien" Type="Self.luongnhanvien" Multiplicity="*" />
           <ReferentialConstraint>
@@ -188,7 +182,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__luongnhan__nhanv__29572725">
+        <Association Name="FK__luongnhan__nhanv__2A4B4B5E">
           <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="0..1" />
           <End Role="luongnhanvien" Type="Self.luongnhanvien" Multiplicity="*" />
           <ReferentialConstraint>
@@ -200,7 +194,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__luongnhan__phuca__2A4B4B5E">
+        <Association Name="FK__luongnhan__phuca__2B3F6F97">
           <End Role="phucap" Type="Self.phucap" Multiplicity="0..1" />
           <End Role="luongnhanvien" Type="Self.luongnhanvien" Multiplicity="*" />
           <ReferentialConstraint>
@@ -212,7 +206,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__nhanvien__chucvu__2B3F6F97">
+        <Association Name="FK__nhanvien__chucvu__2C3393D0">
           <End Role="chucvu" Type="Self.chucvu" Multiplicity="0..1" />
           <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="*" />
           <ReferentialConstraint>
@@ -224,7 +218,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__nhanvien__hocvan__2C3393D0">
+        <Association Name="FK__nhanvien__hocvan__2D27B809">
           <End Role="hocvan" Type="Self.hocvan" Multiplicity="0..1" />
           <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="*" />
           <ReferentialConstraint>
@@ -236,7 +230,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__nhanvien__hopdon__2D27B809">
+        <Association Name="FK__nhanvien__hopdon__2E1BDC42">
           <End Role="hopdonglaodongnhanvien" Type="Self.hopdonglaodongnhanvien" Multiplicity="0..1" />
           <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="*" />
           <ReferentialConstraint>
@@ -248,7 +242,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__nhanvien__phongb__2E1BDC42">
+        <Association Name="FK__nhanvien__phongb__2F10007B">
           <End Role="phongban" Type="Self.phongban" Multiplicity="0..1" />
           <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="*" />
           <ReferentialConstraint>
@@ -260,7 +254,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__phucap__chucvuma__2F10007B">
+        <Association Name="FK__phucap__chucvuma__300424B4">
           <End Role="chucvu" Type="Self.chucvu" Multiplicity="0..1" />
           <End Role="phucap" Type="Self.phucap" Multiplicity="*" />
           <ReferentialConstraint>
@@ -272,7 +266,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__thongtink__khent__300424B4">
+        <Association Name="FK__thongtink__khent__30F848ED">
           <End Role="khenthuong" Type="Self.khenthuong" Multiplicity="0..1" />
           <End Role="thongtinkhacvenhanvien" Type="Self.thongtinkhacvenhanvien" Multiplicity="*" />
           <ReferentialConstraint>
@@ -284,7 +278,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__thongtink__kylua__30F848ED">
+        <Association Name="FK__thongtink__kylua__31EC6D26">
           <End Role="kyluat" Type="Self.kyluat" Multiplicity="0..1" />
           <End Role="thongtinkhacvenhanvien" Type="Self.thongtinkhacvenhanvien" Multiplicity="*" />
           <ReferentialConstraint>
@@ -296,7 +290,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__thongtink__nhanv__31EC6D26">
+        <Association Name="FK__thongtink__nhanv__32E0915F">
           <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="1" />
           <End Role="thongtinkhacvenhanvien" Type="Self.thongtinkhacvenhanvien" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -308,37 +302,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="QLNhanSuModelStoreContainer">
           <EntitySet Name="baohiem" EntityType="Self.baohiem" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="chucvu" EntityType="Self.chucvu" Schema="dbo" store:Type="Tables" />
@@ -352,57 +315,56 @@
           <EntitySet Name="nhanvien" EntityType="Self.nhanvien" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="phongban" EntityType="Self.phongban" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="phucap" EntityType="Self.phucap" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="thongtinkhacvenhanvien" EntityType="Self.thongtinkhacvenhanvien" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__baohiem__nhanvie__267ABA7A" Association="Self.FK__baohiem__nhanvie__267ABA7A">
+          <AssociationSet Name="FK__baohiem__nhanvie__276EDEB3" Association="Self.FK__baohiem__nhanvie__276EDEB3">
             <End Role="nhanvien" EntitySet="nhanvien" />
             <End Role="baohiem" EntitySet="baohiem" />
           </AssociationSet>
-          <AssociationSet Name="FK__luongcoba__hocva__276EDEB3" Association="Self.FK__luongcoba__hocva__276EDEB3">
+          <AssociationSet Name="FK__luongcoba__hocva__286302EC" Association="Self.FK__luongcoba__hocva__286302EC">
             <End Role="hocvan" EntitySet="hocvan" />
             <End Role="luongcoban" EntitySet="luongcoban" />
           </AssociationSet>
-          <AssociationSet Name="FK__luongnhan__luong__286302EC" Association="Self.FK__luongnhan__luong__286302EC">
+          <AssociationSet Name="FK__luongnhan__luong__29572725" Association="Self.FK__luongnhan__luong__29572725">
             <End Role="luongcoban" EntitySet="luongcoban" />
             <End Role="luongnhanvien" EntitySet="luongnhanvien" />
           </AssociationSet>
-          <AssociationSet Name="FK__luongnhan__nhanv__29572725" Association="Self.FK__luongnhan__nhanv__29572725">
+          <AssociationSet Name="FK__luongnhan__nhanv__2A4B4B5E" Association="Self.FK__luongnhan__nhanv__2A4B4B5E">
             <End Role="nhanvien" EntitySet="nhanvien" />
             <End Role="luongnhanvien" EntitySet="luongnhanvien" />
           </AssociationSet>
-          <AssociationSet Name="FK__luongnhan__phuca__2A4B4B5E" Association="Self.FK__luongnhan__phuca__2A4B4B5E">
+          <AssociationSet Name="FK__luongnhan__phuca__2B3F6F97" Association="Self.FK__luongnhan__phuca__2B3F6F97">
             <End Role="phucap" EntitySet="phucap" />
             <End Role="luongnhanvien" EntitySet="luongnhanvien" />
           </AssociationSet>
-          <AssociationSet Name="FK__nhanvien__chucvu__2B3F6F97" Association="Self.FK__nhanvien__chucvu__2B3F6F97">
+          <AssociationSet Name="FK__nhanvien__chucvu__2C3393D0" Association="Self.FK__nhanvien__chucvu__2C3393D0">
             <End Role="chucvu" EntitySet="chucvu" />
             <End Role="nhanvien" EntitySet="nhanvien" />
           </AssociationSet>
-          <AssociationSet Name="FK__nhanvien__hocvan__2C3393D0" Association="Self.FK__nhanvien__hocvan__2C3393D0">
+          <AssociationSet Name="FK__nhanvien__hocvan__2D27B809" Association="Self.FK__nhanvien__hocvan__2D27B809">
             <End Role="hocvan" EntitySet="hocvan" />
             <End Role="nhanvien" EntitySet="nhanvien" />
           </AssociationSet>
-          <AssociationSet Name="FK__nhanvien__hopdon__2D27B809" Association="Self.FK__nhanvien__hopdon__2D27B809">
+          <AssociationSet Name="FK__nhanvien__hopdon__2E1BDC42" Association="Self.FK__nhanvien__hopdon__2E1BDC42">
             <End Role="hopdonglaodongnhanvien" EntitySet="hopdonglaodongnhanvien" />
             <End Role="nhanvien" EntitySet="nhanvien" />
           </AssociationSet>
-          <AssociationSet Name="FK__nhanvien__phongb__2E1BDC42" Association="Self.FK__nhanvien__phongb__2E1BDC42">
+          <AssociationSet Name="FK__nhanvien__phongb__2F10007B" Association="Self.FK__nhanvien__phongb__2F10007B">
             <End Role="phongban" EntitySet="phongban" />
             <End Role="nhanvien" EntitySet="nhanvien" />
           </AssociationSet>
-          <AssociationSet Name="FK__phucap__chucvuma__2F10007B" Association="Self.FK__phucap__chucvuma__2F10007B">
+          <AssociationSet Name="FK__phucap__chucvuma__300424B4" Association="Self.FK__phucap__chucvuma__300424B4">
             <End Role="chucvu" EntitySet="chucvu" />
             <End Role="phucap" EntitySet="phucap" />
           </AssociationSet>
-          <AssociationSet Name="FK__thongtink__khent__300424B4" Association="Self.FK__thongtink__khent__300424B4">
+          <AssociationSet Name="FK__thongtink__khent__30F848ED" Association="Self.FK__thongtink__khent__30F848ED">
             <End Role="khenthuong" EntitySet="khenthuong" />
             <End Role="thongtinkhacvenhanvien" EntitySet="thongtinkhacvenhanvien" />
           </AssociationSet>
-          <AssociationSet Name="FK__thongtink__kylua__30F848ED" Association="Self.FK__thongtink__kylua__30F848ED">
+          <AssociationSet Name="FK__thongtink__kylua__31EC6D26" Association="Self.FK__thongtink__kylua__31EC6D26">
             <End Role="kyluat" EntitySet="kyluat" />
             <End Role="thongtinkhacvenhanvien" EntitySet="thongtinkhacvenhanvien" />
           </AssociationSet>
-          <AssociationSet Name="FK__thongtink__nhanv__31EC6D26" Association="Self.FK__thongtink__nhanv__31EC6D26">
+          <AssociationSet Name="FK__thongtink__nhanv__32E0915F" Association="Self.FK__thongtink__nhanv__32E0915F">
             <End Role="nhanvien" EntitySet="nhanvien" />
             <End Role="thongtinkhacvenhanvien" EntitySet="thongtinkhacvenhanvien" />
           </AssociationSet>
@@ -421,7 +383,7 @@
           <Property Name="noicap" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="GhiChu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="nhanvienma" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="nhanvien" Relationship="Self.FK__baohiem__nhanvie__267ABA7A" FromRole="baohiem" ToRole="nhanvien" />
+          <NavigationProperty Name="nhanvien" Relationship="Self.FK__baohiem__nhanvie__276EDEB3" FromRole="baohiem" ToRole="nhanvien" />
         </EntityType>
         <EntityType Name="chucvu">
           <Key>
@@ -429,8 +391,8 @@
           </Key>
           <Property Name="ma" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="nhanviens" Relationship="Self.FK__nhanvien__chucvu__2B3F6F97" FromRole="chucvu" ToRole="nhanvien" />
-          <NavigationProperty Name="phucaps" Relationship="Self.FK__phucap__chucvuma__2F10007B" FromRole="chucvu" ToRole="phucap" />
+          <NavigationProperty Name="nhanviens" Relationship="Self.FK__nhanvien__chucvu__2C3393D0" FromRole="chucvu" ToRole="nhanvien" />
+          <NavigationProperty Name="phucaps" Relationship="Self.FK__phucap__chucvuma__300424B4" FromRole="chucvu" ToRole="phucap" />
         </EntityType>
         <EntityType Name="hocvan">
           <Key>
@@ -438,8 +400,8 @@
           </Key>
           <Property Name="ma" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="luongcobans" Relationship="Self.FK__luongcoba__hocva__276EDEB3" FromRole="hocvan" ToRole="luongcoban" />
-          <NavigationProperty Name="nhanviens" Relationship="Self.FK__nhanvien__hocvan__2C3393D0" FromRole="hocvan" ToRole="nhanvien" />
+          <NavigationProperty Name="luongcobans" Relationship="Self.FK__luongcoba__hocva__286302EC" FromRole="hocvan" ToRole="luongcoban" />
+          <NavigationProperty Name="nhanviens" Relationship="Self.FK__nhanvien__hocvan__2D27B809" FromRole="hocvan" ToRole="nhanvien" />
         </EntityType>
         <EntityType Name="hopdonglaodongnhanvien">
           <Key>
@@ -451,7 +413,8 @@
           <Property Name="ngayketthuc" Type="DateTime" Precision="0" />
           <Property Name="luongthuviec" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="nhanviens" Relationship="Self.FK__nhanvien__hopdon__2D27B809" FromRole="hopdonglaodongnhanvien" ToRole="nhanvien" />
+          <Property Name="status" Type="Int32" />
+          <NavigationProperty Name="nhanviens" Relationship="Self.FK__nhanvien__hopdon__2E1BDC42" FromRole="hopdonglaodongnhanvien" ToRole="nhanvien" />
         </EntityType>
         <EntityType Name="khenthuong">
           <Key>
@@ -459,7 +422,7 @@
           </Key>
           <Property Name="ma" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="noidung" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="thongtinkhacvenhanviens" Relationship="Self.FK__thongtink__khent__300424B4" FromRole="khenthuong" ToRole="thongtinkhacvenhanvien" />
+          <NavigationProperty Name="thongtinkhacvenhanviens" Relationship="Self.FK__thongtink__khent__30F848ED" FromRole="khenthuong" ToRole="thongtinkhacvenhanvien" />
         </EntityType>
         <EntityType Name="kyluat">
           <Key>
@@ -467,7 +430,7 @@
           </Key>
           <Property Name="ma" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="noidung" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="thongtinkhacvenhanviens" Relationship="Self.FK__thongtink__kylua__30F848ED" FromRole="kyluat" ToRole="thongtinkhacvenhanvien" />
+          <NavigationProperty Name="thongtinkhacvenhanviens" Relationship="Self.FK__thongtink__kylua__31EC6D26" FromRole="kyluat" ToRole="thongtinkhacvenhanvien" />
         </EntityType>
         <EntityType Name="luongcoban">
           <Key>
@@ -478,8 +441,8 @@
           <Property Name="ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="hocvanma" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="giatri" Type="Decimal" Precision="19" Scale="4" />
-          <NavigationProperty Name="hocvan" Relationship="Self.FK__luongcoba__hocva__276EDEB3" FromRole="luongcoban" ToRole="hocvan" />
-          <NavigationProperty Name="luongnhanviens" Relationship="Self.FK__luongnhan__luong__286302EC" FromRole="luongcoban" ToRole="luongnhanvien" />
+          <NavigationProperty Name="hocvan" Relationship="Self.FK__luongcoba__hocva__286302EC" FromRole="luongcoban" ToRole="hocvan" />
+          <NavigationProperty Name="luongnhanviens" Relationship="Self.FK__luongnhan__luong__29572725" FromRole="luongcoban" ToRole="luongnhanvien" />
         </EntityType>
         <EntityType Name="luongnhanvien">
           <Key>
@@ -494,9 +457,9 @@
           <Property Name="Thuong" Type="Int32" />
           <Property Name="TamUng" Type="Int32" />
           <Property Name="NgayLap" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="luongcoban" Relationship="Self.FK__luongnhan__luong__286302EC" FromRole="luongnhanvien" ToRole="luongcoban" />
-          <NavigationProperty Name="nhanvien" Relationship="Self.FK__luongnhan__nhanv__29572725" FromRole="luongnhanvien" ToRole="nhanvien" />
-          <NavigationProperty Name="phucap" Relationship="Self.FK__luongnhan__phuca__2A4B4B5E" FromRole="luongnhanvien" ToRole="phucap" />
+          <NavigationProperty Name="luongcoban" Relationship="Self.FK__luongnhan__luong__29572725" FromRole="luongnhanvien" ToRole="luongcoban" />
+          <NavigationProperty Name="nhanvien" Relationship="Self.FK__luongnhan__nhanv__2A4B4B5E" FromRole="luongnhanvien" ToRole="nhanvien" />
+          <NavigationProperty Name="phucap" Relationship="Self.FK__luongnhan__phuca__2B3F6F97" FromRole="luongnhanvien" ToRole="phucap" />
         </EntityType>
         <EntityType Name="NguoiDung">
           <Key>
@@ -533,13 +496,14 @@
           <Property Name="phongbanma" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="hopdonglaodongnhanvienma" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="dantoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="baohiems" Relationship="Self.FK__baohiem__nhanvie__267ABA7A" FromRole="nhanvien" ToRole="baohiem" />
-          <NavigationProperty Name="chucvu" Relationship="Self.FK__nhanvien__chucvu__2B3F6F97" FromRole="nhanvien" ToRole="chucvu" />
-          <NavigationProperty Name="hocvan" Relationship="Self.FK__nhanvien__hocvan__2C3393D0" FromRole="nhanvien" ToRole="hocvan" />
-          <NavigationProperty Name="hopdonglaodongnhanvien" Relationship="Self.FK__nhanvien__hopdon__2D27B809" FromRole="nhanvien" ToRole="hopdonglaodongnhanvien" />
-          <NavigationProperty Name="luongnhanviens" Relationship="Self.FK__luongnhan__nhanv__29572725" FromRole="nhanvien" ToRole="luongnhanvien" />
-          <NavigationProperty Name="phongban" Relationship="Self.FK__nhanvien__phongb__2E1BDC42" FromRole="nhanvien" ToRole="phongban" />
-          <NavigationProperty Name="thongtinkhacvenhanvien" Relationship="Self.FK__thongtink__nhanv__31EC6D26" FromRole="nhanvien" ToRole="thongtinkhacvenhanvien" />
+          <Property Name="status" Type="Int32" />
+          <NavigationProperty Name="baohiems" Relationship="Self.FK__baohiem__nhanvie__276EDEB3" FromRole="nhanvien" ToRole="baohiem" />
+          <NavigationProperty Name="chucvu" Relationship="Self.FK__nhanvien__chucvu__2C3393D0" FromRole="nhanvien" ToRole="chucvu" />
+          <NavigationProperty Name="hocvan" Relationship="Self.FK__nhanvien__hocvan__2D27B809" FromRole="nhanvien" ToRole="hocvan" />
+          <NavigationProperty Name="hopdonglaodongnhanvien" Relationship="Self.FK__nhanvien__hopdon__2E1BDC42" FromRole="nhanvien" ToRole="hopdonglaodongnhanvien" />
+          <NavigationProperty Name="luongnhanviens" Relationship="Self.FK__luongnhan__nhanv__2A4B4B5E" FromRole="nhanvien" ToRole="luongnhanvien" />
+          <NavigationProperty Name="phongban" Relationship="Self.FK__nhanvien__phongb__2F10007B" FromRole="nhanvien" ToRole="phongban" />
+          <NavigationProperty Name="thongtinkhacvenhanvien" Relationship="Self.FK__thongtink__nhanv__32E0915F" FromRole="nhanvien" ToRole="thongtinkhacvenhanvien" />
         </EntityType>
         <EntityType Name="phongban">
           <Key>
@@ -549,7 +513,7 @@
           <Property Name="ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="sdt" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
           <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="nhanviens" Relationship="Self.FK__nhanvien__phongb__2E1BDC42" FromRole="phongban" ToRole="nhanvien" />
+          <NavigationProperty Name="nhanviens" Relationship="Self.FK__nhanvien__phongb__2F10007B" FromRole="phongban" ToRole="nhanvien" />
         </EntityType>
         <EntityType Name="phucap">
           <Key>
@@ -558,18 +522,8 @@
           <Property Name="chucvuma" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="ma" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="heso" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="chucvu" Relationship="Self.FK__phucap__chucvuma__2F10007B" FromRole="phucap" ToRole="chucvu" />
-          <NavigationProperty Name="luongnhanviens" Relationship="Self.FK__luongnhan__phuca__2A4B4B5E" FromRole="phucap" ToRole="luongnhanvien" />
-        </EntityType>
-        <EntityType Name="sysdiagram">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="chucvu" Relationship="Self.FK__phucap__chucvuma__300424B4" FromRole="phucap" ToRole="chucvu" />
+          <NavigationProperty Name="luongnhanviens" Relationship="Self.FK__luongnhan__phuca__2B3F6F97" FromRole="phucap" ToRole="luongnhanvien" />
         </EntityType>
         <EntityType Name="thongtinkhacvenhanvien">
           <Key>
@@ -581,11 +535,13 @@
           <Property Name="taikhoannganhang" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="manganhang" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="nhanvienma" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="khenthuong" Relationship="Self.FK__thongtink__khent__300424B4" FromRole="thongtinkhacvenhanvien" ToRole="khenthuong" />
-          <NavigationProperty Name="kyluat" Relationship="Self.FK__thongtink__kylua__30F848ED" FromRole="thongtinkhacvenhanvien" ToRole="kyluat" />
-          <NavigationProperty Name="nhanvien" Relationship="Self.FK__thongtink__nhanv__31EC6D26" FromRole="thongtinkhacvenhanvien" ToRole="nhanvien" />
+          <Property Name="soLD" Type="Int32" />
+          <Property Name="soBHXH" Type="Int32" />
+          <NavigationProperty Name="khenthuong" Relationship="Self.FK__thongtink__khent__30F848ED" FromRole="thongtinkhacvenhanvien" ToRole="khenthuong" />
+          <NavigationProperty Name="kyluat" Relationship="Self.FK__thongtink__kylua__31EC6D26" FromRole="thongtinkhacvenhanvien" ToRole="kyluat" />
+          <NavigationProperty Name="nhanvien" Relationship="Self.FK__thongtink__nhanv__32E0915F" FromRole="thongtinkhacvenhanvien" ToRole="nhanvien" />
         </EntityType>
-        <Association Name="FK__baohiem__nhanvie__267ABA7A">
+        <Association Name="FK__baohiem__nhanvie__276EDEB3">
           <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="0..1" />
           <End Role="baohiem" Type="Self.baohiem" Multiplicity="*" />
           <ReferentialConstraint>
@@ -597,7 +553,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__nhanvien__chucvu__2B3F6F97">
+        <Association Name="FK__nhanvien__chucvu__2C3393D0">
           <End Role="chucvu" Type="Self.chucvu" Multiplicity="0..1" />
           <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="*" />
           <ReferentialConstraint>
@@ -609,7 +565,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__phucap__chucvuma__2F10007B">
+        <Association Name="FK__phucap__chucvuma__300424B4">
           <End Role="chucvu" Type="Self.chucvu" Multiplicity="0..1" />
           <End Role="phucap" Type="Self.phucap" Multiplicity="*" />
           <ReferentialConstraint>
@@ -621,7 +577,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__luongcoba__hocva__276EDEB3">
+        <Association Name="FK__luongcoba__hocva__286302EC">
           <End Role="hocvan" Type="Self.hocvan" Multiplicity="0..1" />
           <End Role="luongcoban" Type="Self.luongcoban" Multiplicity="*" />
           <ReferentialConstraint>
@@ -633,7 +589,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__nhanvien__hocvan__2C3393D0">
+        <Association Name="FK__nhanvien__hocvan__2D27B809">
           <End Role="hocvan" Type="Self.hocvan" Multiplicity="0..1" />
           <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="*" />
           <ReferentialConstraint>
@@ -645,7 +601,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__nhanvien__hopdon__2D27B809">
+        <Association Name="FK__nhanvien__hopdon__2E1BDC42">
           <End Role="hopdonglaodongnhanvien" Type="Self.hopdonglaodongnhanvien" Multiplicity="0..1" />
           <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="*" />
           <ReferentialConstraint>
@@ -657,7 +613,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__thongtink__khent__300424B4">
+        <Association Name="FK__thongtink__khent__30F848ED">
           <End Role="khenthuong" Type="Self.khenthuong" Multiplicity="0..1" />
           <End Role="thongtinkhacvenhanvien" Type="Self.thongtinkhacvenhanvien" Multiplicity="*" />
           <ReferentialConstraint>
@@ -669,7 +625,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__thongtink__kylua__30F848ED">
+        <Association Name="FK__thongtink__kylua__31EC6D26">
           <End Role="kyluat" Type="Self.kyluat" Multiplicity="0..1" />
           <End Role="thongtinkhacvenhanvien" Type="Self.thongtinkhacvenhanvien" Multiplicity="*" />
           <ReferentialConstraint>
@@ -681,7 +637,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__luongnhan__luong__286302EC">
+        <Association Name="FK__luongnhan__luong__29572725">
           <End Role="luongcoban" Type="Self.luongcoban" Multiplicity="0..1" />
           <End Role="luongnhanvien" Type="Self.luongnhanvien" Multiplicity="*" />
           <ReferentialConstraint>
@@ -693,7 +649,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__luongnhan__nhanv__29572725">
+        <Association Name="FK__luongnhan__nhanv__2A4B4B5E">
           <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="0..1" />
           <End Role="luongnhanvien" Type="Self.luongnhanvien" Multiplicity="*" />
           <ReferentialConstraint>
@@ -705,7 +661,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__luongnhan__phuca__2A4B4B5E">
+        <Association Name="FK__luongnhan__phuca__2B3F6F97">
           <End Role="phucap" Type="Self.phucap" Multiplicity="0..1" />
           <End Role="luongnhanvien" Type="Self.luongnhanvien" Multiplicity="*" />
           <ReferentialConstraint>
@@ -717,7 +673,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__nhanvien__phongb__2E1BDC42">
+        <Association Name="FK__nhanvien__phongb__2F10007B">
           <End Role="phongban" Type="Self.phongban" Multiplicity="0..1" />
           <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="*" />
           <ReferentialConstraint>
@@ -729,7 +685,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__thongtink__nhanv__31EC6D26">
+        <Association Name="FK__thongtink__nhanv__32E0915F">
           <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="1" />
           <End Role="thongtinkhacvenhanvien" Type="Self.thongtinkhacvenhanvien" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -741,7 +697,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="QLNhanSuEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="QLNhanSuEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="baohiems" EntityType="Self.baohiem" />
           <EntitySet Name="chucvus" EntityType="Self.chucvu" />
           <EntitySet Name="hocvans" EntityType="Self.hocvan" />
@@ -754,108 +710,66 @@
           <EntitySet Name="nhanviens" EntityType="Self.nhanvien" />
           <EntitySet Name="phongbans" EntityType="Self.phongban" />
           <EntitySet Name="phucaps" EntityType="Self.phucap" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="thongtinkhacvenhanviens" EntityType="Self.thongtinkhacvenhanvien" />
-          <AssociationSet Name="FK__baohiem__nhanvie__267ABA7A" Association="Self.FK__baohiem__nhanvie__267ABA7A">
+          <AssociationSet Name="FK__baohiem__nhanvie__276EDEB3" Association="Self.FK__baohiem__nhanvie__276EDEB3">
             <End Role="nhanvien" EntitySet="nhanviens" />
             <End Role="baohiem" EntitySet="baohiems" />
           </AssociationSet>
-          <AssociationSet Name="FK__nhanvien__chucvu__2B3F6F97" Association="Self.FK__nhanvien__chucvu__2B3F6F97">
+          <AssociationSet Name="FK__nhanvien__chucvu__2C3393D0" Association="Self.FK__nhanvien__chucvu__2C3393D0">
             <End Role="chucvu" EntitySet="chucvus" />
             <End Role="nhanvien" EntitySet="nhanviens" />
           </AssociationSet>
-          <AssociationSet Name="FK__phucap__chucvuma__2F10007B" Association="Self.FK__phucap__chucvuma__2F10007B">
+          <AssociationSet Name="FK__phucap__chucvuma__300424B4" Association="Self.FK__phucap__chucvuma__300424B4">
             <End Role="chucvu" EntitySet="chucvus" />
             <End Role="phucap" EntitySet="phucaps" />
           </AssociationSet>
-          <AssociationSet Name="FK__luongcoba__hocva__276EDEB3" Association="Self.FK__luongcoba__hocva__276EDEB3">
+          <AssociationSet Name="FK__luongcoba__hocva__286302EC" Association="Self.FK__luongcoba__hocva__286302EC">
             <End Role="hocvan" EntitySet="hocvans" />
             <End Role="luongcoban" EntitySet="luongcobans" />
           </AssociationSet>
-          <AssociationSet Name="FK__nhanvien__hocvan__2C3393D0" Association="Self.FK__nhanvien__hocvan__2C3393D0">
+          <AssociationSet Name="FK__nhanvien__hocvan__2D27B809" Association="Self.FK__nhanvien__hocvan__2D27B809">
             <End Role="hocvan" EntitySet="hocvans" />
             <End Role="nhanvien" EntitySet="nhanviens" />
           </AssociationSet>
-          <AssociationSet Name="FK__nhanvien__hopdon__2D27B809" Association="Self.FK__nhanvien__hopdon__2D27B809">
+          <AssociationSet Name="FK__nhanvien__hopdon__2E1BDC42" Association="Self.FK__nhanvien__hopdon__2E1BDC42">
             <End Role="hopdonglaodongnhanvien" EntitySet="hopdonglaodongnhanviens" />
             <End Role="nhanvien" EntitySet="nhanviens" />
           </AssociationSet>
-          <AssociationSet Name="FK__thongtink__khent__300424B4" Association="Self.FK__thongtink__khent__300424B4">
+          <AssociationSet Name="FK__thongtink__khent__30F848ED" Association="Self.FK__thongtink__khent__30F848ED">
             <End Role="khenthuong" EntitySet="khenthuongs" />
             <End Role="thongtinkhacvenhanvien" EntitySet="thongtinkhacvenhanviens" />
           </AssociationSet>
-          <AssociationSet Name="FK__thongtink__kylua__30F848ED" Association="Self.FK__thongtink__kylua__30F848ED">
+          <AssociationSet Name="FK__thongtink__kylua__31EC6D26" Association="Self.FK__thongtink__kylua__31EC6D26">
             <End Role="kyluat" EntitySet="kyluats" />
             <End Role="thongtinkhacvenhanvien" EntitySet="thongtinkhacvenhanviens" />
           </AssociationSet>
-          <AssociationSet Name="FK__luongnhan__luong__286302EC" Association="Self.FK__luongnhan__luong__286302EC">
+          <AssociationSet Name="FK__luongnhan__luong__29572725" Association="Self.FK__luongnhan__luong__29572725">
             <End Role="luongcoban" EntitySet="luongcobans" />
             <End Role="luongnhanvien" EntitySet="luongnhanviens" />
           </AssociationSet>
-          <AssociationSet Name="FK__luongnhan__nhanv__29572725" Association="Self.FK__luongnhan__nhanv__29572725">
+          <AssociationSet Name="FK__luongnhan__nhanv__2A4B4B5E" Association="Self.FK__luongnhan__nhanv__2A4B4B5E">
             <End Role="nhanvien" EntitySet="nhanviens" />
             <End Role="luongnhanvien" EntitySet="luongnhanviens" />
           </AssociationSet>
-          <AssociationSet Name="FK__luongnhan__phuca__2A4B4B5E" Association="Self.FK__luongnhan__phuca__2A4B4B5E">
+          <AssociationSet Name="FK__luongnhan__phuca__2B3F6F97" Association="Self.FK__luongnhan__phuca__2B3F6F97">
             <End Role="phucap" EntitySet="phucaps" />
             <End Role="luongnhanvien" EntitySet="luongnhanviens" />
           </AssociationSet>
-          <AssociationSet Name="FK__nhanvien__phongb__2E1BDC42" Association="Self.FK__nhanvien__phongb__2E1BDC42">
+          <AssociationSet Name="FK__nhanvien__phongb__2F10007B" Association="Self.FK__nhanvien__phongb__2F10007B">
             <End Role="phongban" EntitySet="phongbans" />
             <End Role="nhanvien" EntitySet="nhanviens" />
           </AssociationSet>
-          <AssociationSet Name="FK__thongtink__nhanv__31EC6D26" Association="Self.FK__thongtink__nhanv__31EC6D26">
+          <AssociationSet Name="FK__thongtink__nhanv__32E0915F" Association="Self.FK__thongtink__nhanv__32E0915F">
             <End Role="nhanvien" EntitySet="nhanviens" />
             <End Role="thongtinkhacvenhanvien" EntitySet="thongtinkhacvenhanviens" />
           </AssociationSet>
-          <FunctionImport Name="sp_alterdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="sp_creatediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="sp_dropdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(QLNhanSuModel.sp_helpdiagramdefinition_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(QLNhanSuModel.sp_helpdiagrams_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_renamediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="new_diagramname" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="sp_upgraddiagrams" />
         </EntityContainer>
-        <ComplexType Name="sp_helpdiagramdefinition_Result">
-          <Property Type="Int32" Name="version" Nullable="true" />
-          <Property Type="Binary" Name="definition" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="sp_helpdiagrams_Result">
-          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
-          <Property Type="Int32" Name="OwnerID" Nullable="false" />
-        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="QLNhanSuModelStoreContainer" CdmEntityContainer="QLNhanSuEntities1">
+        <EntityContainerMapping StorageEntityContainer="QLNhanSuModelStoreContainer" CdmEntityContainer="QLNhanSuEntities">
           <EntitySetMapping Name="baohiems">
             <EntityTypeMapping TypeName="QLNhanSuModel.baohiem">
               <MappingFragment StoreEntitySet="baohiem">
@@ -892,6 +806,7 @@
                 <ScalarProperty Name="ngayketthuc" ColumnName="ngayketthuc" />
                 <ScalarProperty Name="luongthuviec" ColumnName="luongthuviec" />
                 <ScalarProperty Name="ten" ColumnName="ten" />
+                <ScalarProperty Name="status" ColumnName="status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -972,6 +887,7 @@
                 <ScalarProperty Name="phongbanma" ColumnName="phongbanma" />
                 <ScalarProperty Name="hopdonglaodongnhanvienma" ColumnName="hopdonglaodongnhanvienma" />
                 <ScalarProperty Name="dantoc" ColumnName="dantoc" />
+                <ScalarProperty Name="status" ColumnName="status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -994,17 +910,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="QLNhanSuModel.sysdiagram">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="thongtinkhacvenhanviens">
             <EntityTypeMapping TypeName="QLNhanSuModel.thongtinkhacvenhanvien">
               <MappingFragment StoreEntitySet="thongtinkhacvenhanvien">
@@ -1014,33 +919,11 @@
                 <ScalarProperty Name="taikhoannganhang" ColumnName="taikhoannganhang" />
                 <ScalarProperty Name="manganhang" ColumnName="manganhang" />
                 <ScalarProperty Name="nhanvienma" ColumnName="nhanvienma" />
+                <ScalarProperty Name="soLD" ColumnName="soLD" />
+                <ScalarProperty Name="soBHXH" ColumnName="soBHXH" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="QLNhanSuModel.Store.sp_alterdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="QLNhanSuModel.Store.sp_creatediagram" />
-          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="QLNhanSuModel.Store.sp_dropdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="QLNhanSuModel.Store.sp_helpdiagramdefinition">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="QLNhanSuModel.sp_helpdiagramdefinition_Result">
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="QLNhanSuModel.Store.sp_helpdiagrams">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="QLNhanSuModel.sp_helpdiagrams_Result">
-                <ScalarProperty Name="Database" ColumnName="Database" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Owner" ColumnName="Owner" />
-                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="QLNhanSuModel.Store.sp_renamediagram" />
-          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="QLNhanSuModel.Store.sp_upgraddiagrams" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

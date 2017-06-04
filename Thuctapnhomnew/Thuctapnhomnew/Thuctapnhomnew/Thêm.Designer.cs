@@ -200,6 +200,8 @@
             // 
             // dtk_ngaysinh
             // 
+            this.dtk_ngaysinh.CustomFormat = "dd/MM/yyyy";
+            this.dtk_ngaysinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtk_ngaysinh.Location = new System.Drawing.Point(147, 60);
             this.dtk_ngaysinh.Name = "dtk_ngaysinh";
             this.dtk_ngaysinh.Size = new System.Drawing.Size(238, 20);

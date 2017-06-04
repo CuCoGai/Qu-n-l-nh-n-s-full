@@ -20,6 +20,8 @@ namespace Thuctapnhomnew
         public string taikhoannganhang { get; set; }
         public string manganhang { get; set; }
         public string nhanvienma { get; set; }
+        public Nullable<int> soLD { get; set; }
+        public Nullable<int> soBHXH { get; set; }
     
         public virtual khenthuong khenthuong { get; set; }
         public virtual kyluat kyluat { get; set; }

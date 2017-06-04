@@ -90,30 +90,72 @@ namespace Thuctapnhomnew
 
 
             //Load DataGridView
-            dgv_dsnv.DataSource = ketnoi.gettable("select ma as N'Mã',ten as N'Họ tên',ngaysinh as N'Ngày sinh', case gioitinh when 1 then 'Nam' when 0 then N'Nữ' end as N'Gioi tinh',soCMT as N'CMTND',anh as N'Ảnh nhân viên',dienthoai as N'SĐT',email,quoctich,tongiao,dantoc,ngaycap,noicap,case tinhtranghonnhan when 1 then N'Đã kết hôn' when 0 then N'Chưa kết hôn 'end as N'Trình trạng hôn nhân',noisinh,quequan,hokhauthuongtru,noiohiennay   from nhanvien");
+          //  dgv_dsnv.DataSource = ketnoi.gettable("select ma as N'Mã',ten as N'Họ tên',ngaysinh as N'Ngày sinh', case gioitinh when 1 then 'Nam' when 0 then N'Nữ' end as N'Gioi tinh',soCMT as N'CMTND',anh as N'Ảnh nhân viên',dienthoai as N'SĐT',email,quoctich,tongiao,dantoc,ngaycap,noicap,case tinhtranghonnhan when 1 then N'Đã kết hôn' when 0 then N'Chưa kết hôn 'end as N'Trình trạng hôn nhân',noisinh,quequan,hokhauthuongtru,noiohiennay   from nhanvien");
            
             // btn_chapnhan.Enabled = false;
             //  btn_huy.Enabled = false;
-            ketnoi.dongketnoi();
+         //   ketnoi.dongketnoi();
             QLNhanSuEntities db = new QLNhanSuEntities();
+            dgv_dsnv.DataSource = db.nhanviens.Where(s => s.status == null).Select(s => new
+            {
+                ID = s.ma,
+                Name = s.ten,
+                Ngaysinh = s.ngaysinh,
+                Gender = s.gioitinh == true ? "Nam" : "Nữ",
+                Email = s.email,
+                Anh = s.anh,
+                
+                CMT = s.soCMT,
+
+                
+                
+            }
+                ).ToList();
+           dgv_dsnv.Columns[0].HeaderText = "Mã nhân viên";
+           dgv_dsnv.Columns[1].HeaderText = "Tên nhân viên";
+           dgv_dsnv.Columns[2].HeaderText = "Ngày sinh";
+           dgv_dsnv.Columns[3].HeaderText = "Giới Tính";
+            dgv_dsnv.Columns[4].HeaderText = "Email ";
+            dgv_dsnv.Columns[5].HeaderText = "Ảnh";
+          dgv_dsnv.Columns[6].HeaderText = "Số CMTND";
+         
+
+
             var list = (from s in db.luongcobans select s.ma ).ToList();
             dgv_luong.DataSource = list;
+            dgv_khent.DataSource = db.thongtinkhacvenhanviens.Select(s => new
+            {
+                s.nhanvien.ten,
+              
+                s.khenthuong.noidung,
+                s.soBHXH,
+                s.soLD,
+               
 
+            
+            }).ToList();
         }
 
         private void dgv_dsnv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string path = dgv_dsnv.CurrentRow.Cells[5].Value.ToString();
+           
 
-
-            if (!string.IsNullOrWhiteSpace(path))
+            try
             {
-                MemoryStream ms = new MemoryStream((byte[])dgv_dsnv.CurrentRow.Cells[5].Value);
-                ptb_anh.Image = Image.FromStream(ms);
+                string path = dgv_dsnv.CurrentRow.Cells[5].Value.ToString();
+                if (!string.IsNullOrWhiteSpace(path))
+                {
+                    MemoryStream ms = new MemoryStream((byte[])dgv_dsnv.CurrentRow.Cells[5].Value);
+                    ptb_anh.Image = Image.FromStream(ms);
 
+                }
             }
-            else
+
+            catch (Exception )
+            {
                 ptb_anh.Image = null;
+            }
+             
             string id = dgv_dsnv.CurrentRow.Cells[0].Value.ToString();
             QLNhanSuEntities nv = new QLNhanSuEntities();
             nhanvien newnv = nv.nhanviens.Single(s => s.ma == id);
@@ -158,10 +200,30 @@ namespace Thuctapnhomnew
             var ngaykt = from s in nv.hopdonglaodongnhanviens where s.ma == newnv.hopdonglaodongnhanvienma select s.ngayketthuc;
             txt_tenhd.Text = tenhd.FirstOrDefault();
             txt_luongcb.Text = luongcoban.FirstOrDefault().ToString();
-            txt_ngaykt.Text = ngaykt.FirstOrDefault().ToString();
+            dtk_batdau.Text = ngaykt.FirstOrDefault().ToString();
+            dtk_ketthuc.Text = ngaybd.FirstOrDefault().ToString();
             var thongtingiadinh = from s in nv.thongtinkhacvenhanviens where s.nhanvienma == newnv.ma select s.giadinh;
             txt_giadinh.Text = thongtingiadinh.FirstOrDefault();
-            var solaodong = from s in nv.thongtinkhacvenhanviens where s.nhanvienma == newnv.ma select s ;
+            var khent = from s in nv.thongtinkhacvenhanviens where s.nhanvienma == newnv.ma select s.khenthuong.noidung ;
+            txt_khent.Text = khent.FirstOrDefault();
+            var sold = from s in nv.thongtinkhacvenhanviens where s.nhanvienma == newnv.ma select s.soLD;
+            var sobhxh = from s in nv.thongtinkhacvenhanviens where s.nhanvienma == newnv.ma select s.soBHXH;
+            var tknh = from s in nv.thongtinkhacvenhanviens where s.nhanvienma == newnv.ma select s.taikhoannganhang;
+            txt_sold.Text = sold.FirstOrDefault().ToString();
+            txt_sobhxh.Text = sobhxh.FirstOrDefault().ToString();
+        //    txt_tknh.Text = tknh.FirstOrDefault().ToString();
+
+
+            //thongtinkhacvenhanvien tt = new thongtinkhacvenhanvien();
+            //try { txt_tknh.Text = tt.taikhoannganhang.ToString(); }
+            //catch { tp_ttkhac.Text = null; }
+
+            //txt_sold.Text = tt.soLD.ToString();
+            //txt_sobhxh.Text = tt.soBHXH.ToString();
+            //  var soBHXH = from s in nv.thongtinkhacvenhanviens where s.nhanvienma == newnv.ma select s.soBHXH;
+
+
+
 
         }
 
@@ -189,6 +251,7 @@ namespace Thuctapnhomnew
 
         private void btn_xoa_Click(object sender, EventArgs e)
         {
+            QLNhanSuEntities db = new QLNhanSuEntities();
             if (dgv_dsnv.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Cần chọn dữ liệu để xóa!", "Thông báo");
@@ -197,17 +260,18 @@ namespace Thuctapnhomnew
             DialogResult = MessageBox.Show("Bạn có chắc muốn xóa!", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (DialogResult == DialogResult.OK)
             {
-                ketnoi.openketnoi();
-                ketnoi.executeQuery("delete from nhanvien where ma='" + dgv_dsnv.Rows[dgv_dsnv.CurrentCell.RowIndex].Cells[0].Value.ToString() + "' ");
+                string id = dgv_dsnv.CurrentRow.Cells[0].Value.ToString();
+                nhanvien nv = db.nhanviens.Single(s => s.ma == id);
+                nv.status = 0;
+                db.SaveChanges();
                 load();
-                ketnoi.dongketnoi();
             }
         }
 
         private void txt_timkiem_KeyUp(object sender, KeyEventArgs e)
         {
             QLNhanSuEntities db = new QLNhanSuEntities();
-            var Lst = (from s in db.nhanviens where s.ma.Contains(txt_timkiem.Text) select s).ToList();
+            var Lst = (from s in db.nhanviens where( s.ma.Contains(txt_timkiem.Text)&&(s.status==null)) select s).ToList();
             dgv_dsnv.DataSource = Lst;
             txt_manv.DataBindings.Clear();
             txt_hoten.DataBindings.Clear();
@@ -251,5 +315,7 @@ namespace Thuctapnhomnew
             fr.Show();
             Hide();
         }
+
+    
     }
 }
