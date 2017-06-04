@@ -44,6 +44,7 @@ namespace Thuctapnhomnew
         public string phongbanma { get; set; }
         public string hopdonglaodongnhanvienma { get; set; }
         public string dantoc { get; set; }
+        public Nullable<int> status { get; set; }
     
         public virtual ICollection<baohiem> baohiems { get; set; }
         public virtual chucvu chucvu { get; set; }

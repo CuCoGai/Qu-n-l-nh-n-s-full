@@ -27,15 +27,20 @@ namespace Thuctapnhomnew
 
 
             nhanvien newnv = nv.nhanviens.Single(s => s.ma == id);
-            string path = newnv.anh.ToString();
-            if (!string.IsNullOrWhiteSpace(path))
+            try
             {
-                MemoryStream ms = new MemoryStream((byte[])newnv.anh);
-                ptb_anh.Image = Image.FromStream(ms);
+                string path = newnv.anh.ToString();
+                if (!string.IsNullOrWhiteSpace(path))
+                {
+                    MemoryStream ms = new MemoryStream((byte[])newnv.anh);
+                    ptb_anh.Image = Image.FromStream(ms);
 
+                }
             }
-            else
-                ptb_anh.Image = null;
+
+            catch(Exception) {
+                ptb_anh.Image = null; }
+              
 
             txt_manv.Text = newnv.ma;
             txt_hoten.Text = newnv.ten;
@@ -204,6 +209,7 @@ namespace Thuctapnhomnew
             n.noiohiennay = txt_tamtru.Text;
             n.hokhauthuongtru = txt_thuongtru.Text;
             n.phongbanma = txt_maphongban.Text;
+            n.hocvanma = txt_hocvan.Text;
             n.chucvuma = txt_chucvu.Text;
              nv.SaveChanges();
 

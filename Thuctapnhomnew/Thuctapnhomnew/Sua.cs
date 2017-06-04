@@ -25,7 +25,7 @@ namespace Thuctapnhomnew
         {
             InitializeComponent();
 
-            QLNhanSuEntities1 nv = new QLNhanSuEntities1();
+            QLNhanSuEntities nv = new QLNhanSuEntities();
             nhanvien newnv = nv.nhanviens.Single(s => s.ma == id);
             string path = newnv.anh.ToString();
             if (!string.IsNullOrWhiteSpace(path))
