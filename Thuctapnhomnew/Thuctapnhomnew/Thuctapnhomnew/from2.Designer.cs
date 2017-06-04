@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(from2));
             this.tp_chedo = new System.Windows.Forms.TabPage();
+            this.dgv_khent = new System.Windows.Forms.DataGridView();
             this.tp_Quanlitienluong = new System.Windows.Forms.TabPage();
             this.dataGridViewLuong = new System.Windows.Forms.DataGridView();
             this.tbc_qltienluong = new System.Windows.Forms.TabControl();
@@ -152,26 +154,29 @@
             this.lbl_tenhd = new System.Windows.Forms.Label();
             this.txt_luongcb = new System.Windows.Forms.TextBox();
             this.txt_mahd = new System.Windows.Forms.TextBox();
-            this.txt_ngaykt = new System.Windows.Forms.TextBox();
             this.lbl_ngaykt = new System.Windows.Forms.Label();
             this.lbl_mahd = new System.Windows.Forms.Label();
             this.lbl_luongcoban = new System.Windows.Forms.Label();
-            this.txt_ngaybd = new System.Windows.Forms.TextBox();
             this.lbl_ngaybatdau = new System.Windows.Forms.Label();
             this.txt_tenhd = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tp_ttkhac = new System.Windows.Forms.TabPage();
             this.txt_tknh = new System.Windows.Forms.TextBox();
-            this.txt_hochieu = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
             this.txt_sold = new System.Windows.Forms.TextBox();
+            this.txt_sobhxh = new System.Windows.Forms.TextBox();
+            this.txt_khent = new System.Windows.Forms.TextBox();
             this.lbl_tknh = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.lbl_bhxh = new System.Windows.Forms.Label();
             this.lbl_sold = new System.Windows.Forms.Label();
+            this.lbl_bhxh = new System.Windows.Forms.Label();
+            this.lbl_kt = new System.Windows.Forms.Label();
             this.txt_giadinh = new System.Windows.Forms.TextBox();
             this.lbl_phongban = new System.Windows.Forms.Label();
             this.tbc_QLNS = new System.Windows.Forms.TabControl();
+            this.grb_khent = new System.Windows.Forms.GroupBox();
+            this.dtk_batdau = new System.Windows.Forms.DateTimePicker();
+            this.dtk_ketthuc = new System.Windows.Forms.DateTimePicker();
+            this.tp_chedo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_khent)).BeginInit();
             this.tp_Quanlitienluong.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLuong)).BeginInit();
             this.tbc_qltienluong.SuspendLayout();
@@ -198,17 +203,27 @@
             this.tbp_hopdong.SuspendLayout();
             this.tp_ttkhac.SuspendLayout();
             this.tbc_QLNS.SuspendLayout();
+            this.grb_khent.SuspendLayout();
             this.SuspendLayout();
             // 
             // tp_chedo
             // 
+            this.tp_chedo.Controls.Add(this.grb_khent);
             this.tp_chedo.Location = new System.Drawing.Point(4, 22);
             this.tp_chedo.Name = "tp_chedo";
             this.tp_chedo.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_chedo.Size = new System.Drawing.Size(900, 568);
+            this.tp_chedo.Size = new System.Drawing.Size(900, 572);
             this.tp_chedo.TabIndex = 3;
             this.tp_chedo.Text = "Khen thưởng,kỷ luật";
             this.tp_chedo.UseVisualStyleBackColor = true;
+            // 
+            // dgv_khent
+            // 
+            this.dgv_khent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_khent.Location = new System.Drawing.Point(16, 19);
+            this.dgv_khent.Name = "dgv_khent";
+            this.dgv_khent.Size = new System.Drawing.Size(632, 150);
+            this.dgv_khent.TabIndex = 0;
             // 
             // tp_Quanlitienluong
             // 
@@ -217,7 +232,7 @@
             this.tp_Quanlitienluong.Location = new System.Drawing.Point(4, 22);
             this.tp_Quanlitienluong.Name = "tp_Quanlitienluong";
             this.tp_Quanlitienluong.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_Quanlitienluong.Size = new System.Drawing.Size(900, 568);
+            this.tp_Quanlitienluong.Size = new System.Drawing.Size(900, 572);
             this.tp_Quanlitienluong.TabIndex = 1;
             this.tp_Quanlitienluong.Text = "Quản lí tiền lương";
             this.tp_Quanlitienluong.UseVisualStyleBackColor = true;
@@ -776,7 +791,7 @@
             this.tp_quanlinhansu.Location = new System.Drawing.Point(4, 22);
             this.tp_quanlinhansu.Name = "tp_quanlinhansu";
             this.tp_quanlinhansu.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_quanlinhansu.Size = new System.Drawing.Size(900, 568);
+            this.tp_quanlinhansu.Size = new System.Drawing.Size(900, 572);
             this.tp_quanlinhansu.TabIndex = 0;
             this.tp_quanlinhansu.Text = "Quản lí nhân sự";
             this.tp_quanlinhansu.UseVisualStyleBackColor = true;
@@ -1308,6 +1323,8 @@
             // 
             // dtk_ngaysinh
             // 
+            this.dtk_ngaysinh.CustomFormat = "dd/MM/yyyy";
+            this.dtk_ngaysinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtk_ngaysinh.Location = new System.Drawing.Point(147, 60);
             this.dtk_ngaysinh.Name = "dtk_ngaysinh";
             this.dtk_ngaysinh.Size = new System.Drawing.Size(238, 20);
@@ -1341,14 +1358,14 @@
             // 
             // tbp_hopdong
             // 
+            this.tbp_hopdong.Controls.Add(this.dtk_ketthuc);
+            this.tbp_hopdong.Controls.Add(this.dtk_batdau);
             this.tbp_hopdong.Controls.Add(this.lbl_tenhd);
             this.tbp_hopdong.Controls.Add(this.txt_luongcb);
             this.tbp_hopdong.Controls.Add(this.txt_mahd);
-            this.tbp_hopdong.Controls.Add(this.txt_ngaykt);
             this.tbp_hopdong.Controls.Add(this.lbl_ngaykt);
             this.tbp_hopdong.Controls.Add(this.lbl_mahd);
             this.tbp_hopdong.Controls.Add(this.lbl_luongcoban);
-            this.tbp_hopdong.Controls.Add(this.txt_ngaybd);
             this.tbp_hopdong.Controls.Add(this.lbl_ngaybatdau);
             this.tbp_hopdong.Controls.Add(this.txt_tenhd);
             this.tbp_hopdong.Controls.Add(this.label1);
@@ -1383,13 +1400,6 @@
             this.txt_mahd.Size = new System.Drawing.Size(100, 20);
             this.txt_mahd.TabIndex = 9;
             // 
-            // txt_ngaykt
-            // 
-            this.txt_ngaykt.Location = new System.Drawing.Point(112, 139);
-            this.txt_ngaykt.Name = "txt_ngaykt";
-            this.txt_ngaykt.Size = new System.Drawing.Size(100, 20);
-            this.txt_ngaykt.TabIndex = 8;
-            // 
             // lbl_ngaykt
             // 
             this.lbl_ngaykt.AutoSize = true;
@@ -1416,13 +1426,6 @@
             this.lbl_luongcoban.Size = new System.Drawing.Size(73, 13);
             this.lbl_luongcoban.TabIndex = 5;
             this.lbl_luongcoban.Text = "Lương cơ bản";
-            // 
-            // txt_ngaybd
-            // 
-            this.txt_ngaybd.Location = new System.Drawing.Point(112, 50);
-            this.txt_ngaybd.Name = "txt_ngaybd";
-            this.txt_ngaybd.Size = new System.Drawing.Size(100, 20);
-            this.txt_ngaybd.TabIndex = 4;
             // 
             // lbl_ngaybatdau
             // 
@@ -1451,13 +1454,13 @@
             // tp_ttkhac
             // 
             this.tp_ttkhac.Controls.Add(this.txt_tknh);
-            this.tp_ttkhac.Controls.Add(this.txt_hochieu);
-            this.tp_ttkhac.Controls.Add(this.textBox14);
             this.tp_ttkhac.Controls.Add(this.txt_sold);
+            this.tp_ttkhac.Controls.Add(this.txt_sobhxh);
+            this.tp_ttkhac.Controls.Add(this.txt_khent);
             this.tp_ttkhac.Controls.Add(this.lbl_tknh);
-            this.tp_ttkhac.Controls.Add(this.label11);
-            this.tp_ttkhac.Controls.Add(this.lbl_bhxh);
             this.tp_ttkhac.Controls.Add(this.lbl_sold);
+            this.tp_ttkhac.Controls.Add(this.lbl_bhxh);
+            this.tp_ttkhac.Controls.Add(this.lbl_kt);
             this.tp_ttkhac.Controls.Add(this.txt_giadinh);
             this.tp_ttkhac.Controls.Add(this.lbl_phongban);
             this.tp_ttkhac.Location = new System.Drawing.Point(4, 22);
@@ -1475,26 +1478,26 @@
             this.txt_tknh.Size = new System.Drawing.Size(100, 20);
             this.txt_tknh.TabIndex = 9;
             // 
-            // txt_hochieu
-            // 
-            this.txt_hochieu.Location = new System.Drawing.Point(98, 125);
-            this.txt_hochieu.Name = "txt_hochieu";
-            this.txt_hochieu.Size = new System.Drawing.Size(100, 20);
-            this.txt_hochieu.TabIndex = 8;
-            // 
-            // textBox14
-            // 
-            this.textBox14.Location = new System.Drawing.Point(98, 89);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(100, 20);
-            this.textBox14.TabIndex = 7;
-            // 
             // txt_sold
             // 
-            this.txt_sold.Location = new System.Drawing.Point(98, 54);
+            this.txt_sold.Location = new System.Drawing.Point(98, 125);
             this.txt_sold.Name = "txt_sold";
             this.txt_sold.Size = new System.Drawing.Size(100, 20);
-            this.txt_sold.TabIndex = 6;
+            this.txt_sold.TabIndex = 8;
+            // 
+            // txt_sobhxh
+            // 
+            this.txt_sobhxh.Location = new System.Drawing.Point(98, 89);
+            this.txt_sobhxh.Name = "txt_sobhxh";
+            this.txt_sobhxh.Size = new System.Drawing.Size(100, 20);
+            this.txt_sobhxh.TabIndex = 7;
+            // 
+            // txt_khent
+            // 
+            this.txt_khent.Location = new System.Drawing.Point(98, 54);
+            this.txt_khent.Name = "txt_khent";
+            this.txt_khent.Size = new System.Drawing.Size(100, 20);
+            this.txt_khent.TabIndex = 6;
             // 
             // lbl_tknh
             // 
@@ -1505,14 +1508,14 @@
             this.lbl_tknh.TabIndex = 5;
             this.lbl_tknh.Text = "TKNH";
             // 
-            // label11
+            // lbl_sold
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(19, 128);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(51, 13);
-            this.label11.TabIndex = 4;
-            this.label11.Text = "Hộ Chiếu";
+            this.lbl_sold.AutoSize = true;
+            this.lbl_sold.Location = new System.Drawing.Point(19, 128);
+            this.lbl_sold.Name = "lbl_sold";
+            this.lbl_sold.Size = new System.Drawing.Size(70, 13);
+            this.lbl_sold.TabIndex = 4;
+            this.lbl_sold.Text = "Số Lao Động";
             // 
             // lbl_bhxh
             // 
@@ -1523,14 +1526,14 @@
             this.lbl_bhxh.TabIndex = 3;
             this.lbl_bhxh.Text = "Số BHXH";
             // 
-            // lbl_sold
+            // lbl_kt
             // 
-            this.lbl_sold.AutoSize = true;
-            this.lbl_sold.Location = new System.Drawing.Point(19, 57);
-            this.lbl_sold.Name = "lbl_sold";
-            this.lbl_sold.Size = new System.Drawing.Size(37, 13);
-            this.lbl_sold.TabIndex = 2;
-            this.lbl_sold.Text = "Số LĐ";
+            this.lbl_kt.AutoSize = true;
+            this.lbl_kt.Location = new System.Drawing.Point(19, 57);
+            this.lbl_kt.Name = "lbl_kt";
+            this.lbl_kt.Size = new System.Drawing.Size(68, 13);
+            this.lbl_kt.TabIndex = 2;
+            this.lbl_kt.Text = "Khen thưởng";
             // 
             // txt_giadinh
             // 
@@ -1556,8 +1559,36 @@
             this.tbc_QLNS.Location = new System.Drawing.Point(3, 12);
             this.tbc_QLNS.Name = "tbc_QLNS";
             this.tbc_QLNS.SelectedIndex = 0;
-            this.tbc_QLNS.Size = new System.Drawing.Size(908, 594);
+            this.tbc_QLNS.Size = new System.Drawing.Size(908, 598);
             this.tbc_QLNS.TabIndex = 1;
+            // 
+            // grb_khent
+            // 
+            this.grb_khent.Controls.Add(this.dgv_khent);
+            this.grb_khent.Location = new System.Drawing.Point(16, 6);
+            this.grb_khent.Name = "grb_khent";
+            this.grb_khent.Size = new System.Drawing.Size(654, 213);
+            this.grb_khent.TabIndex = 1;
+            this.grb_khent.TabStop = false;
+            this.grb_khent.Text = "Danh sách nhân viên khen thưởng";
+            // 
+            // dtk_batdau
+            // 
+            this.dtk_batdau.CustomFormat = "dd/MM/yyyy";
+            this.dtk_batdau.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtk_batdau.Location = new System.Drawing.Point(112, 46);
+            this.dtk_batdau.Name = "dtk_batdau";
+            this.dtk_batdau.Size = new System.Drawing.Size(100, 20);
+            this.dtk_batdau.TabIndex = 12;
+            // 
+            // dtk_ketthuc
+            // 
+            this.dtk_ketthuc.CustomFormat = "dd/MM/yyyy";
+            this.dtk_ketthuc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtk_ketthuc.Location = new System.Drawing.Point(112, 146);
+            this.dtk_ketthuc.Name = "dtk_ketthuc";
+            this.dtk_ketthuc.Size = new System.Drawing.Size(100, 20);
+            this.dtk_ketthuc.TabIndex = 13;
             // 
             // from2
             // 
@@ -1565,9 +1596,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(939, 611);
             this.Controls.Add(this.tbc_QLNS);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "from2";
             this.Text = "Quản lí thông tin nhân viên";
             this.Load += new System.EventHandler(this.from2_Load);
+            this.tp_chedo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_khent)).EndInit();
             this.tp_Quanlitienluong.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLuong)).EndInit();
             this.tbc_qltienluong.ResumeLayout(false);
@@ -1605,6 +1639,7 @@
             this.tp_ttkhac.ResumeLayout(false);
             this.tp_ttkhac.PerformLayout();
             this.tbc_QLNS.ResumeLayout(false);
+            this.grb_khent.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1682,26 +1717,25 @@
         private System.Windows.Forms.Label lbl_tenhd;
         private System.Windows.Forms.TextBox txt_luongcb;
         private System.Windows.Forms.TextBox txt_mahd;
-        private System.Windows.Forms.TextBox txt_ngaykt;
         private System.Windows.Forms.Label lbl_ngaykt;
         private System.Windows.Forms.Label lbl_mahd;
         private System.Windows.Forms.Label lbl_luongcoban;
-        private System.Windows.Forms.TextBox txt_ngaybd;
         private System.Windows.Forms.Label lbl_ngaybatdau;
         private System.Windows.Forms.TextBox txt_tenhd;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tp_ttkhac;
         private System.Windows.Forms.TextBox txt_tknh;
-        private System.Windows.Forms.TextBox txt_hochieu;
-        private System.Windows.Forms.TextBox textBox14;
         private System.Windows.Forms.TextBox txt_sold;
+        private System.Windows.Forms.TextBox txt_sobhxh;
+        private System.Windows.Forms.TextBox txt_khent;
         private System.Windows.Forms.Label lbl_tknh;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label lbl_bhxh;
         private System.Windows.Forms.Label lbl_sold;
+        private System.Windows.Forms.Label lbl_bhxh;
+        private System.Windows.Forms.Label lbl_kt;
         private System.Windows.Forms.TextBox txt_giadinh;
         private System.Windows.Forms.Label lbl_phongban;
         private System.Windows.Forms.TabControl tbc_QLNS;
+<<<<<<< HEAD
         private System.Windows.Forms.TextBox tbxMaLCB;
         private System.Windows.Forms.TextBox tbxTamUng;
         private System.Windows.Forms.TextBox tbxThuong;
@@ -1755,5 +1789,16 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.DateTimePicker dtpkNgayLapLuong;
+=======
+        private System.Windows.Forms.TabControl tbc_qltienluong;
+        private System.Windows.Forms.TabPage tp_luong;
+        private System.Windows.Forms.DataGridView dgv_luong;
+        private System.Windows.Forms.TabPage tp_phucap;
+        private System.Windows.Forms.DataGridView dgv_phucap;
+        private System.Windows.Forms.DataGridView dgv_khent;
+        private System.Windows.Forms.GroupBox grb_khent;
+        private System.Windows.Forms.DateTimePicker dtk_ketthuc;
+        private System.Windows.Forms.DateTimePicker dtk_batdau;
+>>>>>>> refs/remotes/origin/Ngoc
     }
 }
