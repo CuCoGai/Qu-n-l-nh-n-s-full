@@ -17,13 +17,25 @@ namespace Thuctapnhomnew
         public hocvan()
         {
             this.luongcobans = new HashSet<luongcoban>();
+            this.luongcobans1 = new HashSet<luongcoban>();
+            this.luongcobans2 = new HashSet<luongcoban>();
+            this.luongcobans3 = new HashSet<luongcoban>();
             this.nhanviens = new HashSet<nhanvien>();
+            this.nhanviens1 = new HashSet<nhanvien>();
+            this.nhanviens2 = new HashSet<nhanvien>();
+            this.nhanviens3 = new HashSet<nhanvien>();
         }
     
         public string ma { get; set; }
         public string ten { get; set; }
     
         public virtual ICollection<luongcoban> luongcobans { get; set; }
+        public virtual ICollection<luongcoban> luongcobans1 { get; set; }
+        public virtual ICollection<luongcoban> luongcobans2 { get; set; }
+        public virtual ICollection<luongcoban> luongcobans3 { get; set; }
         public virtual ICollection<nhanvien> nhanviens { get; set; }
+        public virtual ICollection<nhanvien> nhanviens1 { get; set; }
+        public virtual ICollection<nhanvien> nhanviens2 { get; set; }
+        public virtual ICollection<nhanvien> nhanviens3 { get; set; }
     }
 }

@@ -12,9 +12,14 @@ namespace Thuctapnhomnew
     using System;
     using System.Collections.Generic;
     
-    public partial class kyluat
+    public partial class baohiem
     {
         public string ma { get; set; }
-        public string noidung { get; set; }
+        public Nullable<System.DateTime> ngaycap { get; set; }
+        public string noicap { get; set; }
+        public string GhiChu { get; set; }
+        public string nhanvienma { get; set; }
+    
+        public virtual nhanvien nhanvien { get; set; }
     }
 }

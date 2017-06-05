@@ -17,6 +17,9 @@ namespace Thuctapnhomnew
         public luongcoban()
         {
             this.luongnhanviens = new HashSet<luongnhanvien>();
+            this.luongnhanviens1 = new HashSet<luongnhanvien>();
+            this.luongnhanviens2 = new HashSet<luongnhanvien>();
+            this.luongnhanviens3 = new HashSet<luongnhanvien>();
         }
     
         public string ma { get; set; }
@@ -26,6 +29,12 @@ namespace Thuctapnhomnew
         public Nullable<decimal> giatri { get; set; }
     
         public virtual hocvan hocvan { get; set; }
+        public virtual hocvan hocvan1 { get; set; }
+        public virtual hocvan hocvan2 { get; set; }
+        public virtual hocvan hocvan3 { get; set; }
         public virtual ICollection<luongnhanvien> luongnhanviens { get; set; }
+        public virtual ICollection<luongnhanvien> luongnhanviens1 { get; set; }
+        public virtual ICollection<luongnhanvien> luongnhanviens2 { get; set; }
+        public virtual ICollection<luongnhanvien> luongnhanviens3 { get; set; }
     }
 }

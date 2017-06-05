@@ -17,6 +17,9 @@ namespace Thuctapnhomnew
         public phucap()
         {
             this.luongnhanviens = new HashSet<luongnhanvien>();
+            this.luongnhanviens1 = new HashSet<luongnhanvien>();
+            this.luongnhanviens2 = new HashSet<luongnhanvien>();
+            this.luongnhanviens3 = new HashSet<luongnhanvien>();
         }
     
         public string chucvuma { get; set; }
@@ -24,6 +27,12 @@ namespace Thuctapnhomnew
         public string heso { get; set; }
     
         public virtual chucvu chucvu { get; set; }
+        public virtual chucvu chucvu1 { get; set; }
+        public virtual chucvu chucvu2 { get; set; }
+        public virtual chucvu chucvu3 { get; set; }
         public virtual ICollection<luongnhanvien> luongnhanviens { get; set; }
+        public virtual ICollection<luongnhanvien> luongnhanviens1 { get; set; }
+        public virtual ICollection<luongnhanvien> luongnhanviens2 { get; set; }
+        public virtual ICollection<luongnhanvien> luongnhanviens3 { get; set; }
     }
 }

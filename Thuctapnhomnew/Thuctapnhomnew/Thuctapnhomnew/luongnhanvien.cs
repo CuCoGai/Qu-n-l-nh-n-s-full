@@ -25,7 +25,16 @@ namespace Thuctapnhomnew
         public Nullable<System.DateTime> NgayLap { get; set; }
     
         public virtual luongcoban luongcoban { get; set; }
+        public virtual luongcoban luongcoban1 { get; set; }
+        public virtual luongcoban luongcoban2 { get; set; }
+        public virtual luongcoban luongcoban3 { get; set; }
         public virtual nhanvien nhanvien { get; set; }
+        public virtual nhanvien nhanvien1 { get; set; }
+        public virtual nhanvien nhanvien2 { get; set; }
+        public virtual nhanvien nhanvien3 { get; set; }
         public virtual phucap phucap { get; set; }
+        public virtual phucap phucap1 { get; set; }
+        public virtual phucap phucap2 { get; set; }
+        public virtual phucap phucap3 { get; set; }
     }
 }
